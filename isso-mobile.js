@@ -2416,8 +2416,10 @@ function preload(){
 
 function setup() {
 
-	let w = document.getElementById('sketch-holder').clientWidth
-	let h = document.getElementById('sketch-holder').clientHeight
+/* 	let w = document.getElementById('sketch-holder').clientWidth
+	let h = document.getElementById('sketch-holder').clientHeight */
+	var w = window.innerWidth - 10;
+	var h = window.innerHeight - 20;
 	var canvas = createCanvas(w, h);
 	canvas.parent('sketch-holder');
 
@@ -2428,8 +2430,8 @@ function setup() {
 	VIEWPORT = { x: 20, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-20, b: height-20 };
 
 	trimid = VIEWPORT.y + (0.5*VIEWPORT.h);
-	tritop = trimid - 30;
-	tribot = trimid + 30;
+	tritop = trimid - 15;
+	tribot = trimid + 15;
 
 	dootsy = height - 0.6*dootsd;
 	dootss = 1.4*dootsd;
@@ -2476,9 +2478,6 @@ function draw() {
 
 	SKT.draw();
 
-	//noFill();
-	//stroke( '#7a0002' );
-	//rect( VIEWPORT.x, VIEWPORT.y, VIEWPORT.w, VIEWPORT.h );
 	if( INDEX > 0 ){
 		fill(255);
 		if( mouseX < VIEWPORT.x  ){
