@@ -324,25 +324,23 @@ class S00_SAGUAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, TOP);
-
-		textFont( DINcon, 70 );
+		textAlign(CENTER, CENTER); // Alinha o texto à esquerda e no meio verticalmente
+	  
+		textFont(DINcon, 70);
 		textLeading(64);
-		text("\"ISSO TUDO\nNÃO ME DIZ\nNADA\"", 100, 30 );
-		textFont( DINcon, 20 );
-		text("Cacique Aritana, 1975, na 13º Bienal de S. Paulo.", 100, 228 );
-
-		textFont( DINcon, 18 );
+		text("\"ISSO TUDO\nNÃO ME DIZ\nNADA\"", width * 0.5, height * 0.5 - 220);
+	  
+		textFont(DINcon, 20);
+		text("Cacique Aritana, 1975, na 13º Bienal de S. Paulo.", width * 0.5, height * 0.5 - 100);
+		textAlign(LEFT, TOP);
+		textFont(DINcon, 18);
 		textLeading(18);
 		text("Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de S. Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
-			  100, 285, VIEWPORT.w * 0.38 );
-		
-		//text("Se ninguém conseguir manter viva\na constelação de relações\nque um arquivo precisa para respirar,\nentão ele é um ser-arquivo sem vida\ne que, se está nessa condição,\no melhor é tratar\ncomo qualquer matéria-morta\ne devolvê-la à terra.\n\nretorno à terra.\n", 
-		//	  100, 285 );
-		textAlign(RIGHT, TOP);
-		textFont( DINcon, 20 );
-		text("Esta obra-digital inclui componentes de áudio e de interatividade com o mouse.",
-			 width -25, 25 );
+		10, height * 0.5 - 40, VIEWPORT.w * 1);
+	  
+		textAlign(CENTER, CENTER);
+		textFont(DINcon, 15);
+		text("Esta obra-digital inclui componentes de áudio e de interatividade com o toque.", width * 0.5, 20);
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -2422,12 +2420,14 @@ function setup() {
 	var h = window.innerHeight - 20;
 	var canvas = createCanvas(w, h);
 	canvas.parent('sketch-holder');
+	
 
 	cx = w / 2;
 
 	dootsd = 14;
 
 	VIEWPORT = { x: 20, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-20, b: height-20 };
+	//VIEWPORT = { x: 0, y: 0, w: width, h: height, r: width, b: height };
 
 	trimid = VIEWPORT.y + (0.5*VIEWPORT.h);
 	tritop = trimid - 15;
@@ -2477,7 +2477,7 @@ function setup() {
 function draw() {
 
 	SKT.draw();
-
+	//background(200,0,110)
 	if( INDEX > 0 ){
 		fill(255);
 		if( mouseX < VIEWPORT.x  ){
