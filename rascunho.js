@@ -1,7 +1,7 @@
 	
 	
 	
-	
+	  <div id="sketch-holder" style="width: 99vw; height: 98vh; position: absolute; z-index: 2;"></div>
 	
 	
 	
