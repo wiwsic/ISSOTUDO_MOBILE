@@ -278,3 +278,33 @@ class S08DESCRICAO{
 	mouseReleased(){}
 	end(){}
 }
+
+//// NOTA MENTAL EU MEXI AQUI PARA TENTAR FAZER A PAGINA NAO PASSAR DE 2 em 2 no dia 12/07
+
+function mouseReleased(){
+
+	if( coordinates_in_rct( mouseX, mouseY, VIEWPORT ) ){
+		SKT.mouseReleased();
+	}
+	else if( cashmeoutsy ){
+		if( mouseY > VIEWPORT.h ){
+			let pi = INDEX;
+			INDEX = round( (mouseX - dootsx) / dootss );
+			if( INDEX != pi && INDEX >= 0 && INDEX <= 21 ){
+				load_skt();
+			}
+		}
+		else{
+			if( mouseX < VIEWPORT.x ){
+				INDEX -= 1;
+			}
+			else INDEX += 1;
+
+			INDEX = constrain( INDEX, 0, 21 );
+			load_skt();
+		}
+	}
+	cashmeoutsy = false;
+}
+
+
