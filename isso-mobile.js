@@ -2426,7 +2426,7 @@ function setup() {
 
 	cx = w / 2;
 
-	dootsd = 14;
+	dootsd = 11;
 
 	//VIEWPORT = { x: 20, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-10, b: height-20 };
 	VIEWPORT = { x: 10, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-10, b: height-20 };
@@ -2437,7 +2437,7 @@ function setup() {
 
 	dootsy = height - 0.6*dootsd;
 	dootss = 1.4*dootsd;
-	dootsx = VIEWPORT.x + (0.45*VIEWPORT.w) - 6*dootss;
+	dootsx = VIEWPORT.x + (0.45*VIEWPORT.w) - 8*dootss;
 
 	titulos = Array(22);
 	titulos[0] = "Início"
@@ -2483,7 +2483,7 @@ function draw() {
 	if( INDEX > 0 ){
 		fill(255);
 		if( mouseX < VIEWPORT.x  ){
-			stroke(255);
+			noStroke();
 			strokeWeight(3);
 		}
 		else noStroke();
@@ -2492,7 +2492,7 @@ function draw() {
 	if( INDEX < 21 ){
 		fill(255);
 		if( mouseX > VIEWPORT.r ){
-			stroke(255);
+			noStroke();
 			strokeWeight(3);
 		}
 		else noStroke();
@@ -2591,3 +2591,38 @@ function keyReleased(){
 		load_skt();
 	}
 }
+
+function touchStarted() {
+	if (coordinates_in_rct(touchX, touchY, VIEWPORT)) {
+	  SKT.mousePressed();
+	} else {
+	  cashmeoutsy = true;
+	}
+  }
+  
+  function touchMoved() {
+	SKT.mouseDragged();
+  }
+  
+  function touchEnded() {
+	if (coordinates_in_rct(touchX, touchY, VIEWPORT)) {
+	  SKT.mouseReleased();
+	} else if (cashmeoutsy) {
+	  if (touchY > VIEWPORT.h) {
+		let pi = INDEX;
+		INDEX = round((touchX - dootsx) / dootss);
+		if (INDEX !== pi && INDEX >= 0 && INDEX <= 21) {
+		  load_skt();
+		}
+	  } else {
+		if (touchX < VIEWPORT.x) {
+		  INDEX -= 1;
+		} else INDEX += 1;
+  
+		INDEX = constrain(INDEX, 0, 21);
+		load_skt();
+	  }
+	}
+	cashmeoutsy = false;
+  }
+  
