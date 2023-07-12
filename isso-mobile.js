@@ -1187,10 +1187,15 @@ class S04DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nA FLOR\nESTE FIO-ARQUIVO-VIVO\nESTÁ NUM TEMPO HISTÓRICO\nNÃO-LINEAR?", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 0.9 );
+		textLeading(textLeadingSize * 0.9);
+		text("E SE\nA FLOR\nESTE FIO-ARQUIVO-VIVO\nESTÁ NUM TEMPO HISTÓRICO\nNÃO-LINEAR?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1321,10 +1326,15 @@ class S05DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.1 );
+		textLeading(textLeadingSize * 1.1);
+		text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1433,10 +1443,15 @@ class S06DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 0.9 );
+		textLeading(textLeadingSize * 0.9);
+		text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1603,10 +1618,15 @@ function S06_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", 100, trimid );
+	var textFontSize = width * 0.10;
+	var textLeadingSize = textFontSize * 0.91;
+	var textPositionY = height * 0.5 - textFontSize * 2.2;
+	var textWidth = width * 0.869;
+
+	textAlign(CENTER, CENTER);
+	textFont( DINcon, textFontSize * 1.1 );
+	textLeading(textLeadingSize * 1.1);
+	text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", width * 0.5, trimid );
 
 	push();
 	imageMode(CORNER);
@@ -1657,10 +1677,15 @@ class S07DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("\"ISSO TUDO\nNÃO ME DIZ\nNADA.\"\nE SE\nTECERMOS NOSSOS\nCAMINHOS?", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.3);
+		textLeading(textLeadingSize * 1.3);
+		text("\"ISSO TUDO\nNÃO ME DIZ\nNADA.\"\nE SE\nTECERMOS NOSSOS\nCAMINHOS?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1868,10 +1893,15 @@ class S08DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("UM FIO DE ALGODÃO,\nUM CANTO,\nUMA REDE DE DORMIR,\nUM GRAFISMO\nSÃO DOCUMENTOS\nHISTÓRICOS.\nARQUIVOS-VIVOS.", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.2);
+		textLeading(textLeadingSize * 1.2);
+		text("UM FIO DE ALGODÃO,\nUM CANTO,\nUMA REDE DE DORMIR,\nUM GRAFISMO\nSÃO DOCUMENTOS\nHISTÓRICOS.\nARQUIVOS-VIVOS.", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -2081,10 +2111,15 @@ class S09DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.3);
+		textLeading(textLeadingSize * 1.3);
+		text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -2198,10 +2233,15 @@ class S10DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("AFINAL, MEUS PARENTES,\nO QUE É ARQUIVO?\nOU AINDA:\nO QUE É ARQUIVO-\nINDÍGENA?", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.1);
+		textLeading(textLeadingSize * 1.1);
+		text("AFINAL, MEUS PARENTES,\nO QUE É ARQUIVO?\nOU AINDA:\nO QUE É ARQUIVO-\nINDÍGENA?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
