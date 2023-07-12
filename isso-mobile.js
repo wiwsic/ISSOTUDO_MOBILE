@@ -2435,9 +2435,9 @@ function setup() {
 	tritop = trimid - 10;
 	tribot = trimid + 10;
 
-	dootsy = height - 0.6*dootsd;
+	dootsy = height - 1*dootsd;
 	dootss = 1.4*dootsd;
-	dootsx = VIEWPORT.x + (0.45*VIEWPORT.w) - 8*dootss;
+	dootsx = VIEWPORT.x + (0.42*VIEWPORT.w) - 8*dootss;
 
 	titulos = Array(22);
 	titulos[0] = "Início"
