@@ -2416,8 +2416,10 @@ function setup() {
 
 /* 	let w = document.getElementById('sketch-holder').clientWidth
 	let h = document.getElementById('sketch-holder').clientHeight */
-	var w = window.innerWidth - 10;
-	var h = window.innerHeight - 20;
+	//var w = window.innerWidth - 10;
+	//var h = window.innerHeight - 20;
+	var w = window.innerWidth;
+	var h = window.innerHeight;
 	var canvas = createCanvas(w, h);
 	canvas.parent('sketch-holder');
 	
@@ -2426,12 +2428,12 @@ function setup() {
 
 	dootsd = 14;
 
-	VIEWPORT = { x: 20, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-20, b: height-20 };
-	//VIEWPORT = { x: 0, y: 0, w: width, h: height, r: width, b: height };
+	//VIEWPORT = { x: 20, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-10, b: height-20 };
+	VIEWPORT = { x: 10, y: 0, w: width-40, h: height - 1.2*dootsd, r: width-10, b: height-20 };
 
 	trimid = VIEWPORT.y + (0.5*VIEWPORT.h);
-	tritop = trimid - 15;
-	tribot = trimid + 15;
+	tritop = trimid - 10;
+	tribot = trimid + 10;
 
 	dootsy = height - 0.6*dootsd;
 	dootss = 1.4*dootsd;
@@ -2485,7 +2487,7 @@ function draw() {
 			strokeWeight(3);
 		}
 		else noStroke();
-		triangle( VIEWPORT.x, tritop, VIEWPORT.x, tribot, 2, trimid );
+		triangle( VIEWPORT.x, tritop, VIEWPORT.x, tribot, 0, trimid );
 	}
 	if( INDEX < 21 ){
 		fill(255);
@@ -2494,7 +2496,7 @@ function draw() {
 			strokeWeight(3);
 		}
 		else noStroke();
-		triangle( VIEWPORT.r, tritop, VIEWPORT.r, tribot, width-2, trimid );
+		triangle( VIEWPORT.r, tritop, VIEWPORT.r, tribot, width, trimid );
 	}
 
 	push();
