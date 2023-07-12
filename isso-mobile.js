@@ -314,7 +314,7 @@ function PH_end(){}
 
 
 
-class S00_SAGUAO{
+/* class S00_SAGUAO{
 
 	constructor(){
 		loop();
@@ -347,7 +347,54 @@ class S00_SAGUAO{
 	mouseDragged(){}
 	mouseReleased(){}
 	end(){}
-}
+} */
+
+class S00_SAGUAO {
+	constructor() {
+	  loop();
+	}
+  
+	draw() {
+	  clear();
+	  fill(255);
+	  noStroke();
+  
+	  // Proporções com base no tamanho original da tela
+	  var textFontSize = width * 0.10;
+	  var textLeadingSize = textFontSize * 0.91;
+	  var textPositionY = height * 0.5 - textFontSize * 2.2;
+	  var textWidth = width * 0.869;
+  
+	  textAlign(CENTER, CENTER);
+	  textFont(DINcon, textFontSize * 2.1);
+	  textLeading(textLeadingSize * 2.1);
+	  text("\"ISSO TUDO\nNÃO ME DIZ\nNADA\"", width * 0.5, textPositionY * 0.6 );
+  
+	  textFont(DINcon, textFontSize * 0.55);
+	  text("Cacique Aritana, 1975, na 13º Bienal de S. Paulo.", width * 0.5, textPositionY * 1.1);
+  
+	  textAlign(LEFT, TOP);
+	  textFont(DINcon, textFontSize * 0.45);
+	  textLeading(textFontSize * 0.45);
+	  text(
+		"Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de S. Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
+		10,
+		textPositionY + textFontSize * 2,
+		textWidth
+	  );
+  
+	  textAlign(CENTER, CENTER);
+	  textFont(DINcon, textFontSize * 0.38);
+	  text("Esta obra-digital inclui componentes de áudio e de interatividade com o toque.", width * 0.5, textFontSize * 0.5);
+	}
+  
+	mouseMoved() {}
+	mousePressed() {}
+	mouseDragged() {}
+	mouseReleased() {}
+	end() {}
+  }
+  
 
 
 
