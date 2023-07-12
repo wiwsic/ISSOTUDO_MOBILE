@@ -410,10 +410,16 @@ class S01DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid );
+
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.3 );
+		textLeading(textLeadingSize * 1.3);
+		text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -700,10 +706,16 @@ class S02DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSAS AUSÊNCIAS\nNÃO FOSSEM SINTOMAS?", 100, trimid );
+
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.1 );
+		textLeading(textLeadingSize * 1.1);
+		text("E SE\nNOSSAS AUSÊNCIAS\nNÃO FOSSEM SINTOMAS?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -927,10 +939,15 @@ class S03DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", 100, trimid );
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.1 );
+		textLeading(textLeadingSize * 1.1);
+		text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
