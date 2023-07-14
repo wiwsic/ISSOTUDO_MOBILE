@@ -573,14 +573,6 @@ function S01_draw(){
 		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
 	}
 
-
-	//let head = createVector( wa.x + (28 * cos( tet ) ), wa.y + (5 * sin( 2*tet ) ) );
-	//tet += 0.0012;
-	//head = p5.Vector.lerp( PE.V[3], head, 0.25 );
-
-	//fill(255);
-	//ellipse( Wa.A.x, Wa.A.y, 8, 8 );
-
 	let G = p5.Vector.sub( SKT.Wa.A, SKT.PE.V[3] ).mult(0.00004);
 	let R = createVector(0,0);
 	for( var i = 1; i < 3; ++i ){
