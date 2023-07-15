@@ -438,32 +438,37 @@ function build_S01() {
 			end: PH_end };
 
 	SKT.bg = loadImage( 'data01/desenho.png' );
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w; 
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.bgx = width * .1 - (60);
 
-	//console.log( 'launching 1st step' );
+	console.log( 'launching 1st step' );
 	loadStrings( 'data01/fio.txt', build_S01_step1, failed );
 }
 function build_S01_step1( arr ){
 
-	//console.log( 'step1: '+arr );
+	console.log( 'step1: '+arr );
 
 	SKT.P = Array( arr.length );
 	for( var i = 0; i < arr.length; ++i ){
 		let spl = split(arr[i], ',');
-		let x = float( spl[0] );
+		let x = float( spl[0] ) - 42;
 		let y = float( spl[1] );
 		SKT.P[i] = createVector( x, y );
 	}
 
+	console.log( 'launching 2st step' );
 	SKT.PEimg = loadImage( 'data01/pe.png', build_S01_step2, failed );
 }
 function build_S01_step2(){
 
-	//console.log( 'step2');
-
+	console.log( 'step2');
+	console.log( 'launching 3st step' );
 	SKT.PEdat = loadStrings( 'data01/pe.txt', build_S01_step3, failed );
+
 }
 function build_S01_step3(){
+
+	console.log( 'step3');
 
 	SKT.PE = new Rig( SKT.PEimg, SKT.PEdat, SKT.bgx );
 	SKT.PEdat = null;
@@ -495,18 +500,24 @@ function build_S01_step3(){
 
 	SKT.Scl = VIEWPORT.h / 1483.0;
 	SKT.rct_serzinho = { x: SKT.bgx + 426 * SKT.Scl, y: 1229 * SKT.Scl, w:  192 * SKT.Scl, h:  199 * SKT.Scl };
+	//SKT.rct_serzinho = { x: SKT.bgx + 126 * SKT.Scl, y: 1229 * SKT.Scl, w:  192 * SKT.Scl, h:  199 * SKT.Scl };
 
+	console.log( 'launching 4st step' );
 	SKT.sound_fio = loadSound('data01/01-fio-de-algodao-2.wav', build_S01_step4, failed );
 }
 function build_S01_step4(){
+	console.log( 'step4');
+	console.log( 'launching 5st step' );
 	SKT.sound_pemao = loadSound('data01/02-pe-de-algodao1.wav', build_S01_step5, failed );
 }
 function build_S01_step5(){
+	console.log( 'step5');
+	console.log( 'launching 6st step' );
 	SKT.sound_serzinho = loadSound('data01/03-serzinho-em-baixo-3.wav', build_S01_step6, failed );
 }
 function build_S01_step6(){
 
-	//console.log( 'step6' );
+	console.log( 'step6' );
 
 	SKT.sound_fio.playMode('sustain');
 	SKT.sound_pemao.playMode('sustain');
@@ -554,17 +565,17 @@ function S01_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
+	/* textAlign(LEFT, CENTER);
 	textFont( DINcon, 50 );
 	textLeading(50);
-	text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid );
+	text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid ); */
 
 	
 
 	push();
 	translate( SKT.bgx, 0 );
 	scale( SKT.Scl );
-	image( SKT.bg, 0, 0 );
+	image( SKT.bg, -100, 0 );
 	pop();
 
 	stroke(255);
