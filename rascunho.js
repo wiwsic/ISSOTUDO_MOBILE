@@ -319,7 +319,8 @@ function build_S01() {
 			end: S01_end };
 
 	SKT.bg = loadImage( 'data01/desenho.png' );
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w; 
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w; 
+	SKT.bgx = width * .1 - (60);
 
 	//console.log( 'launching 1st step' );
 	loadStrings( 'data01/fio.txt', build_S01_step1, failed );
@@ -334,7 +335,7 @@ function build_S01_step1( arr ){
 	SKT.P = Array( arr.length );
 	for( var i = 0; i < arr.length; ++i ){
 		let spl = split(arr[i], ',');
-		let x = float( spl[0] );
+		let x = float( spl[0] ) - 42;
 		let y = float( spl[1] );
 		SKT.P[i] = createVector( x, y );
 	}
@@ -440,15 +441,11 @@ function S01_draw() {
   
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont(DINcon, 50);
-	textLeading(50);
-	text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid);
-  
+
 	push();
 	translate(SKT.bgx, 0);
 	scale(SKT.Scl);
-	image(SKT.bg, 0, 0);
+	image(SKT.bg, -100, 0);
 	pop();
   
 	stroke(255);
