@@ -2520,7 +2520,7 @@ function preload(){
 }
 
 function setup() {
-
+	document.addEventListener('touchstart', touchStarted);
 /* 	let w = document.getElementById('sketch-holder').clientWidth
 	let h = document.getElementById('sketch-holder').clientHeight */
 	//var w = window.innerWidth - 10;
@@ -2700,36 +2700,42 @@ function keyReleased(){
 }
 
 function touchStarted() {
-	if (coordinates_in_rct(touchX, touchY, VIEWPORT)) {
+	if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
 	  SKT.mousePressed();
 	} else {
 	  cashmeoutsy = true;
 	}
-  }
+	
+}
+
   
   function touchMoved() {
 	SKT.mouseDragged();
   }
   
   function touchEnded() {
-	if (coordinates_in_rct(touchX, touchY, VIEWPORT)) {
-	  SKT.mouseReleased();
-	} else if (cashmeoutsy) {
-	  if (touchY > VIEWPORT.h) {
-		let pi = INDEX;
-		INDEX = round((touchX - dootsx) / dootss);
-		if (INDEX !== pi && INDEX >= 0 && INDEX <= 21) {
-		  load_skt();
+	if (touches.length > 0) {
+		if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
+			SKT.mouseReleased();
+		} else if (cashmeoutsy) {
+			if (touches[0].y > VIEWPORT.h) {
+				let pi = INDEX;
+				INDEX = round((touches[0].x - dootsx) / dootss);
+				if (INDEX !== pi && INDEX >= 0 && INDEX <= 21) {
+					load_skt();
+				}
+			} else {
+				if (touches[0].x < VIEWPORT.x) {
+					INDEX -= 1;
+				} else INDEX += 1;
+
+				INDEX = constrain(INDEX, 0, 21);
+				load_skt();
+			}
 		}
-	  } else {
-		if (touchX < VIEWPORT.x) {
-		  INDEX -= 1;
-		} else INDEX += 1;
-  
-		INDEX = constrain(INDEX, 0, 21);
-		load_skt();
-	  }
+		cashmeoutsy = false;
 	}
-	cashmeoutsy = false;
-  }
+}
+
+
   
