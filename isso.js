@@ -148,10 +148,17 @@ class Rig{
 
 	draw(){
 		for( var i = 0; i < this.N; ++i ){
+		/* 	strokeWeight(2);
+			stroke(0,0,255);
+			line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
 
-			//strokeWeight(2);
-			//stroke(0,0,255);
-			//line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
+			noFill();
+
+			    // Desenhar retângulo
+				rect(this.R[i].x, this.R[i].y, this.R[i].w, this.R[i].h);
+    
+				// Desenhar elipse nas coordenadas do vetor
+				ellipse(this.V[i].x, this.V[i].y, 10, 10); */
 
 			push();
 			translate( this.V[i].x, this.V[i].y );
