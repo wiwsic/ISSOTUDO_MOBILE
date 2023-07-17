@@ -555,3 +555,43 @@ function S01_end() {
 	SKT.sound_serzinho.stop();
 }
 
+//////
+
+
+bkp do HTML
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      touch-action: none;
+    }
+  </style>
+  <script language="javascript" type="text/javascript" src="p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="p5.sound.js"></script>
+  <script id="script-loader" language="javascript" type="text/javascript"></script>
+</head>
+
+<body text="#EEEEEE" link="#DDDDDD" vlink="#FFFFFF" bgcolor="#8a0d12">
+
+  <div id="sketch-holder" style="width: 100vw; height: 100vh; position: absolute; z-index: 2;"></div>
+
+  <script>
+    var scriptLoader = document.getElementById('script-loader');
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      // Dispositivo móvel
+      scriptLoader.src = 'isso-mobile.js';
+    } else {
+      // Outros dispositivos
+      scriptLoader.src = 'isso.js';
+    }
+  </script>
+
+</body>
+</html>
+

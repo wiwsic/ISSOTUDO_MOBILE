@@ -149,10 +149,18 @@ class Rig{
 	draw(){
 		for( var i = 0; i < this.N; ++i ){
 
-			//strokeWeight(2);
-			//stroke(0,0,255);
-			//line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
+/* 			strokeWeight(2);
+			stroke(0,0,255);
+			line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
 
+			noFill();
+
+			    // Desenhar retângulo
+				rect(this.R[i].x, this.R[i].y, this.R[i].w, this.R[i].h);
+    
+				// Desenhar elipse nas coordenadas do vetor
+				ellipse(this.V[i].x, this.V[i].y, 10, 10);
+ */
 			push();
 			translate( this.V[i].x, this.V[i].y );
 			rotate( atan2( this.V[i+1].y - this.V[i].y, this.V[i+1].x - this.V[i].x) + this.da[i] );
@@ -430,7 +438,7 @@ class S01DESCRICAO{
 
 function build_S01() {
 	
-	SKT = { P: null, Pl: null, D: -1, MH: [], mhi: 0, Wa: null, PE: {}, rct_serzinho: null, 
+	SKT = { P: null, Pl: null, D: 1, MH: [], mhi: 0, Wa: null, PE: {}, rct_serzinho: null, rct_pemao: null, 
 			sound_fio: null, sound_pemao: null, sound_serzinho: null, 
 			contact_fio: 0, contact_pemao: 0, contact_serzinho: 0,
 			draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
@@ -499,7 +507,8 @@ function build_S01_step3(){
 	SKT.Wa.A = SKT.PE.V[3].copy();
 
 	SKT.Scl = VIEWPORT.h / 1483.0;
-	SKT.rct_serzinho = { x: SKT.bgx + 426 * SKT.Scl, y: 1229 * SKT.Scl, w:  192 * SKT.Scl, h:  199 * SKT.Scl };
+	SKT.rct_serzinho = { x: SKT.bgx + 326 * SKT.Scl, y: 1229 * SKT.Scl, w:  192 * SKT.Scl, h:  199 * SKT.Scl };
+	SKT.rct_pemao = { x: SKT.bgx + 80 * SKT.Scl, y: 780 * SKT.Scl, w:  192 * SKT.Scl, h:  650 * SKT.Scl };
 	//SKT.rct_serzinho = { x: SKT.bgx + 126 * SKT.Scl, y: 1229 * SKT.Scl, w:  192 * SKT.Scl, h:  199 * SKT.Scl };
 
 	console.log( 'launching 4st step' );
@@ -533,13 +542,21 @@ function build_S01_step6(){
 }
 
 function S01_draw(){
-	if( mouseX == pmouseX && mouseY == pmouseY ){
-		if( p5.Vector.dist( SKT.PE.V[3], SKT.MH[SKT.mhi] ) < 40 ){
-			SKT.contact_pemao += 1;
-		}
-		if( coordinates_in_rct( mouseX, mouseY, SKT.rct_serzinho ) ){
-			SKT.contact_serzinho += 1;
-		}
+
+	let x = mouseX;
+	let y = mouseY;
+  
+	if (touches.length > 0) {
+	  x = touches[0].x;
+	  y = touches[0].y;
+	}
+
+	if (coordinates_in_rct(x, y, SKT.rct_pemao)) {
+		SKT.contact_pemao += 1;
+	  }
+
+	if (coordinates_in_rct(x, y, SKT.rct_serzinho)) {
+	  SKT.contact_serzinho += 1;
 	}
 
 	if( SKT.contact_fio > 0 ){
@@ -563,14 +580,14 @@ function S01_draw(){
 
 	clear();
 
+	rectMode(CORNER);
+/* 	fill(0)
+	rect(SKT.rct_serzinho.x, SKT.rct_serzinho.y, SKT.rct_serzinho.w, SKT.rct_serzinho.h);
+	rect(SKT.rct_pemao.x, SKT.rct_pemao.y, SKT.rct_pemao.w, SKT.rct_pemao.h); */
+
+
 	fill(255);
 	noStroke();
-	/* textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid ); */
-
-	
 
 	push();
 	translate( SKT.bgx, 0 );
@@ -600,100 +617,136 @@ function S01_draw(){
 	SKT.PE.draw();
 }
 
-function S01_mouseMoved(){
-	SKT.MH[SKT.mhi].set( mouseX, mouseY );
-	SKT.mhl = (SKT.mhi >= 2)? 0 : SKT.mhi+1;
-	if( SKT.MH[SKT.mhl].x < 0 ){
-		SKT.MH[SKT.mhl].set( mouseX - movedX, mouseY - movedY );
+function S01_mouseMoved() {
+	let x = mouseX;
+	let y = mouseY;
+	console.log("mouse moved test")
+	if (touches.length > 0) {
+	  x = touches[0].x;
+	  y = touches[0].y;
+	 
 	}
+  
+	SKT.MH[SKT.mhi].set(x, y);
+	SKT.mhl = (SKT.mhi >= 2) ? 0 : SKT.mhi + 1;
+	if (SKT.MH[SKT.mhl].x < 0) {
+	  SKT.MH[SKT.mhl].set(x - mouseX, y - mouseY);
+	}
+  
 	let LsM = { A: SKT.MH[SKT.mhi], B: SKT.MH[SKT.mhl] };
 	let LsF = { A: SKT.P[0], B: null };
-
-	for( var i = 1; i < SKT.P.length; ++i ){
-		LsF.B = SKT.P[i];
-		if( intersect( LsM, LsF ) ){
-			let i0 = constrain( i-5, 0, SKT.P.length-1 );
-			for (var j = i0; j < i; j++) {
-				SKT.P[j].x += map( j, i-5, i, 0.1, 0.85 ) * movedX;
-				SKT.P[j].y += map( j, i-5, i, 0.1, 0.85 ) * movedY;
-			}
-			let i1 = constrain( i+5, 0, SKT.P.length-1 );
-			for (var j = i; j < i1; j++) {
-				SKT.P[j].x += map( j, i, i+5, 0.85, 0.1 ) * movedX;
-				SKT.P[j].y += map( j, i, i+5, 0.85, 0.1 ) * movedY;
-			}
-			drag_fio_vpl( SKT.P, SKT.Pl, i );
-			SKT.contact_fio += 3;
-			//break;
+  
+	for (var i = 1; i < SKT.P.length; ++i) {
+	  LsF.B = SKT.P[i];
+	  if (intersect(LsM, LsF)) {
+		let i0 = constrain(i - 5, 0, SKT.P.length - 1);
+		for (var j = i0; j < i; j++) {
+		  SKT.P[j].x += map(j, i - 5, i, 0.1, 0.85) * (x - mouseX);
+		  SKT.P[j].y += map(j, i - 5, i, 0.1, 0.85) * (y - mouseY);
 		}
-		LsF.A = LsF.B;
+		let i1 = constrain(i + 5, 0, SKT.P.length - 1);
+		for (var j = i; j < i1; j++) {
+		  SKT.P[j].x += map(j, i, i + 5, 0.85, 0.1) * (x - mouseX);
+		  SKT.P[j].y += map(j, i, i + 5, 0.85, 0.1) * (y - mouseY);
+		}
+		drag_fio_vpl(SKT.P, SKT.Pl, i);
+		SKT.contact_fio += 3;
+		//break;
+	  }
+	  LsF.A = LsF.B;
 	}
-
+  
 	LsF.A = SKT.PE.V[1];
 	let clipped = 0;
-	for( var i = 2; i < 4; ++i ){
-		LsF.B = SKT.PE.V[i];
-		if( intersect( LsM, LsF ) ){
-			SKT.Wa.V[2].x += 0.1 * movedX;
-			SKT.Wa.V[2].y += 0.1 * movedY;
-			clipped = 1;
-			SKT.contact_pemao += 2;
-		}
-		LsF.A = LsF.B;
+	for (var i = 2; i < 4; ++i) {
+	  LsF.B = SKT.PE.V[i];
+	  if (intersect(LsM, LsF)) {
+		SKT.Wa.V[2].x += 0.1 * (x - mouseX);
+		SKT.Wa.V[2].y += 0.1 * (y - mouseY);
+		clipped = 1;
+		SKT.contact_pemao += 2;
+	  }
+	  LsF.A = LsF.B;
 	}
-	if( !clipped ){
-		let d = p5.Vector.dist( SKT.PE.V[3], SKT.MH[SKT.mhi] );
-		if( d < 40 ){
-			SKT.Wa.V[2].x += 0.02 * movedX;
-			SKT.Wa.V[2].y += 0.02 * movedY;
-			SKT.contact_pemao += 2;
-		}
+	if (!clipped) {
+	  let d = p5.Vector.dist(SKT.PE.V[3], SKT.MH[SKT.mhi]);
+	  if (d < 40) {
+		SKT.Wa.V[2].x += 0.02 * (x - mouseX);
+		SKT.Wa.V[2].y += 0.02 * (y - mouseY);
+		SKT.contact_pemao += 2;
+	  }
 	}
-
-	if( coordinates_in_rct( mouseX, mouseY, SKT.rct_serzinho ) ){
-		SKT.contact_serzinho += 2;
+  
+	if (coordinates_in_rct(x, y, SKT.rct_serzinho)) {
+	  SKT.contact_serzinho += 2;
 	}
-
+  
 	SKT.mhi += 1;
-	if( SKT.mhi >= 3 ) SKT.mhi = 0;
-}
-
-function S01_mousePressed(){
-	let M = createVector( mouseX, mouseY );
-	for( var i = 0; i < SKT.P.length; ++i ){
-		let dsq = p5.Vector.sub( SKT.P[i], M ).magSq();
-		if( dsq < 8 ){
-			SKT.D = i;
-			break;
-		}
+	if (SKT.mhi >= 3) SKT.mhi = 0;
+  }
+  
+  function S01_mousePressed() {
+	let x = mouseX;
+	let y = mouseY;
+  
+	if (touches.length > 0) {
+	  x = touches[0].x;
+	  y = touches[0].y;
+	  console.log("touch acionado e x e y alterados")
 	}
-}
-
-function S01_mouseDragged(){
-
-	if( SKT.D >= 0 ){
-		SKT.P[SKT.D].x = mouseX;
-		SKT.P[SKT.D].y = mouseY;
-		drag_fio_vpl( SKT.P, SKT.Pl, SKT.D );
-		SKT.contact_fio += 3;
+  
+	let M = createVector(x, y);
+	for (var i = 0; i < SKT.P.length; ++i) {
+	  let dsq = p5.Vector.sub(SKT.P[i], M).magSq();
+	  if (dsq < 8) {
+		SKT.D = i;
+		break;
+	  }
 	}
-	if( p5.Vector.dist( SKT.PE.V[3], SKT.MH[SKT.mhi] ) < 40 ){
+  }
+  
+  function S01_mouseDragged() {
+	let x = mouseX;
+	let y = mouseY;
+  
+	if (touches.length > 0) {
+	  x = touches[0].x;
+	  y = touches[0].y;
+	  console.log("touch arrastado e x e y alterados")
+	}
+
+	console.log("SKT.D:", SKT.D); // Verificar o valor de SKT.D
+  
+	if (SKT.D >= 0) {
+	  SKT.P[SKT.D].x = x;
+	  SKT.P[SKT.D].y = y;
+	  drag_fio_vpl(SKT.P, SKT.Pl, SKT.D);
+	  SKT.contact_fio += 3;
+	}
+	if (p5.Vector.dist(SKT.PE.V[3], SKT.MH[SKT.mhi]) < 40) {
+	  SKT.contact_pemao += 1;
+	}
+
+	if (coordinates_in_rct(x, y, SKT.rct_pemao)) {
 		SKT.contact_pemao += 1;
-	}
-	if( coordinates_in_rct( mouseX, mouseY, SKT.rct_serzinho ) ){
-		SKT.contact_serzinho += 1;
-	}
-}
+	  }
 
-function S01_mouseReleased(){
-	SKT.D = -1;
-}
-
-function S01_end(){
+	if (coordinates_in_rct(x, y, SKT.rct_serzinho)) {
+	  SKT.contact_serzinho += 1;
+	}
+  }
+  
+  function S01_mouseReleased() {
+	//SKT.D = -1;
+	console.log("touch removido")
+  }
+  
+  function S01_end() {
 	SKT.sound_fio.stop();
 	SKT.sound_pemao.stop();
 	SKT.sound_serzinho.stop();
-}
+  }
+  
 
 
 
@@ -2520,7 +2573,7 @@ function preload(){
 }
 
 function setup() {
-	document.addEventListener('touchstart', touchStarted);
+	//document.addEventListener('touchstart', touchStarted);
 /* 	let w = document.getElementById('sketch-holder').clientWidth
 	let h = document.getElementById('sketch-holder').clientHeight */
 	//var w = window.innerWidth - 10;
@@ -2700,11 +2753,13 @@ function keyReleased(){
 }
 
 function touchStarted() {
-	if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
+/* 	if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
 	  SKT.mousePressed();
 	} else {
 	  cashmeoutsy = true;
-	}
+	} */
+	SKT.mousePressed();
+	//console.log(touches[0].x,touches[0].y)
 	
 }
 
@@ -2713,7 +2768,8 @@ function touchStarted() {
 	SKT.mouseDragged();
   }
   
-  function touchEnded() {
+/*   function touchEnded() {
+	SKT.mouseReleased();
 	if (touches.length > 0) {
 		if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
 			SKT.mouseReleased();
@@ -2734,6 +2790,32 @@ function touchStarted() {
 			}
 		}
 		cashmeoutsy = false;
+		
+	}
+} */
+
+function touchEnded() {
+	SKT.mouseReleased();
+	if (touches.length > 0) {
+		SKT.mouseReleased();
+		 if (cashmeoutsy) {
+			if (touches[0].y > VIEWPORT.h) {
+				let pi = INDEX;
+				INDEX = round((touches[0].x - dootsx) / dootss);
+				if (INDEX !== pi && INDEX >= 0 && INDEX <= 21) {
+					load_skt();
+				}
+			} else {
+				if (touches[0].x < VIEWPORT.x) {
+					INDEX -= 1;
+				} else INDEX += 1;
+
+				INDEX = constrain(INDEX, 0, 21);
+				load_skt();
+			}
+		}
+		cashmeoutsy = false;
+		
 	}
 }
 
