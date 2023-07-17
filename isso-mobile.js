@@ -239,6 +239,14 @@ class Stalk{
 		this.V[2].x += bgx;
 		this.V[1].x += bgx;
 		this.V[0].x += bgx;
+		// começo das alterações wiw
+		this.V[2].x += width * 0.1;
+		this.V[1].x += width * 0.1;
+		this.V[0].x += width * 0.1;
+		this.V[2].y += height * 0.25;
+		this.V[1].y += height * 0.25;
+		this.V[0].y += height * 0.25;
+		// fim das alterações wiw
 		this.O = createVector( 0.5 * this.src.w,  this.src.h ).mult(Scl);
 		this.td = { w: this.src.w * Scl, h: this.src.h * Scl };
 		this.src.y -= 163;
@@ -262,7 +270,7 @@ class Stalk{
 					this.src.x, this.src.y, this.src.w, this.src.h );
 		pop();
 
-		//stroke(255);
+		stroke(255);
 		//line( this.V[2].x, this.V[2].y, this.V[1].x, this.V[1].y );
 		//line( this.V[1].x, this.V[1].y, this.V[0].x, this.V[0].y );
 	}
@@ -787,14 +795,16 @@ function build_S02(){
 			end: PH_end };
 
 	SKT.bg = loadImage( 'data02/desenho.png' );
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.bgx = width * .1 - (60);
 
 	SKT.img = loadImage('data02/algodoes.png');
 	loadStrings("data02/algodata.txt", build_S02_step1, failed );
 }
 function build_S02_step1( arr ){
 
-	SKT.Scl = VIEWPORT.h / 1312.0;
+	//SKT.Scl = VIEWPORT.h / 1312.0;
+	SKT.Scl = VIEWPORT.h / 2200;
 
 	SKT.N = arr.length;
 	SKT.S = Array( SKT.N );
@@ -802,12 +812,23 @@ function build_S02_step1( arr ){
 		SKT.S[i] = new Stalk( arr[i], SKT.Scl, SKT.bgx );
 	}
 
-	SKT.GX = SKT.bgx;
+/* 	SKT.GX = SKT.bgx;
 	SKT.GY = 163 * SKT.Scl;
 	SKT.GW = 1 / (1055 * SKT.Scl * 0.2);
 	SKT.GH = 1 / (657 * SKT.Scl * 0.25);
 	SKT.GR = SKT.GX + 1055 * SKT.Scl;
+	SKT.GB = SKT.GY + 657 * SKT.Scl; */
+
+	// começo dos ajustes do wiw
+
+	SKT.GX = SKT.bgx + (width * 0.1);
+	SKT.GY = (163 * SKT.Scl) + (height * 0.25);
+	SKT.GW = 1 / (1055 * SKT.Scl * 0.2);
+	SKT.GH = 1 / (657 * SKT.Scl * 0.25);
+	SKT.GR = SKT.GX + 1055 * SKT.Scl;
 	SKT.GB = SKT.GY + 657 * SKT.Scl;
+
+	// fim dos ajustes do wiw
 	
 	SKT.board_contact = Array(20);
 	for( var i = 0; i < 20; ++i ){
@@ -904,6 +925,7 @@ function build_S02_step20(){
 function build_S02_step21(){
 	SKT.draw = S02_draw;
 	SKT.mouseMoved = S02_mouseMoved;
+	SKT.mouseDragged = S02_mouseDragged;
 	loop();
 }
 
@@ -931,15 +953,11 @@ function S02_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("E SE\nNOSSAS AUSÊNCIAS\nNÃO FOSSEM SINTOMAS?", 100, trimid );
 
 	push();
 	translate( SKT.bgx, 0 );
 	scale( SKT.Scl );
-	image( SKT.bg, 0, 0 );
+	image( SKT.bg, width * 0.4, height * 1.1 );
 	pop();
 
 	/*
@@ -962,6 +980,24 @@ function S02_draw(){
 	}
 }
 function S02_mouseMoved(){
+	let M = createVector( mouseX, mouseY );
+	for( var i = 0; i < SKT.N; ++i ){
+		let ds = p5.Vector.sub( SKT.S[i].V[2], M ).magSq();
+		if( ds < 2500 ){
+			if( ds < 250 ) ds = 250;
+			SKT.S[i].move_anchored( createVector( movedX, movedY ).mult( 75/ds ) );
+		}
+	}
+
+	if( mouseX > SKT.GX && mouseX < SKT.GR &&
+		mouseY > SKT.GY && mouseY < SKT.GB ){
+		let I = floor((mouseX-SKT.GX) * SKT.GW);
+		let J = floor((mouseY-SKT.GY) * SKT.GH);
+		SKT.board_contact[ I + 5*J ] += 2;
+	}
+}
+
+function S02_mouseDragged(){
 	let M = createVector( mouseX, mouseY );
 	for( var i = 0; i < SKT.N; ++i ){
 		let ds = p5.Vector.sub( SKT.S[i].V[2], M ).magSq();
