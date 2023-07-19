@@ -326,6 +326,9 @@ function PH_mouseMoved(){}
 function PH_mousePressed(){}
 function PH_mouseDragged(){}
 function PH_mouseReleased(){}
+function PH_touchStarted(){}
+function PH_touchMoved(){}
+function PH_touchEnded(){}
 function PH_end(){}
 
 
@@ -1039,7 +1042,7 @@ class S03DESCRICAO{
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize * 1.1 );
 		textLeading(textLeadingSize * 1.1);
-		text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", width * 0.5, trimid );
+		text("E SE\nUM DE NOSSOS\nARQUIVOS-INDÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1054,9 +1057,11 @@ function build_S03(){
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.bgx = width * .1 - (60);
 
-	SKT.Scl = VIEWPORT.h / 1199.0;
+	SKT.Scl = VIEWPORT.h / 1699.0;
+	//SKT.Scl = VIEWPORT.h / 1199.0;
 
 	SKT.dst = Array(8);
 	SKT.dst[0] = { x: 280, y: 981, w: 228,  h: 193 }; //foot.png
@@ -1078,15 +1083,26 @@ function build_S03(){
 	SKT.V[6]= createVector( 457.385, 484.764 ); //flower.png:       flower tip
 	SKT.V[7]= createVector( 752.108, 665.141 ); //right leaf.png:   right leaf tip
 
+	var heightAdjustment = 220.5; // Valor de ajuste para diminuir a altura dos elementos
+
+	// Ajuste das coordenadas y dos vetores
+	for (var i = 0; i < 8; i++) {
+	  SKT.dst[i].y += heightAdjustment;
+	  SKT.V[i].y += heightAdjustment;
+	}	
+
 	SKT.RV = Array(8);
 	SKT.RV[0]= null;//foot
 	SKT.RV[1]= SKT.V[0].copy();//left branch
 	SKT.RV[2]= SKT.V[0].copy();//right branch
 	SKT.RV[3]= SKT.V[1].copy();//left leaf
 	SKT.RV[4]= createVector( 401.017, 318.881 ); // top leaf root //top leaf
+	SKT.RV[4].y += heightAdjustment
 	SKT.RV[5]= SKT.V[2].copy();//file folder
 	SKT.RV[6]= createVector( 426.785, 689.298 ); // flower root //flower
+	SKT.RV[6].y += heightAdjustment
 	SKT.RV[7]= createVector( 708.624, 557.236 ); // right leaf root//right leaf
+	SKT.RV[7].y += heightAdjustment
 
 	SKT.O = Array(8);
 	SKT.da = Array(8);
@@ -1171,9 +1187,32 @@ function build_S03_step11(){
 	loop();
 }
 
+let prevTouchX = 0;
+let prevTouchY = 0;
+
 function S03_draw(){
 
-	let M = createVector( mouseX, mouseY );
+	let x = mouseX;
+	let y = mouseY;
+  
+	if (touches.length > 0) {
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+	
+		let touchVelX = x - prevTouchX;
+		let touchVelY = y - prevTouchY;
+		let touchVel = createVector(touchVelX, touchVelY);
+		SKT.wind = touchVel.mult(0.08);
+	
+		prevTouchX = x;
+		prevTouchY = y;
+	  } else {
+		SKT.wind = createVector(0, 0);
+	  }
+	
+	let M = createVector(x, y);
+
 	if( p5.Vector.dist( M, SKT.V[5] ) < 140 * SKT.Scl ){
 		if( !(SKT.sound_pasta.isPlaying()) ){
 			SKT.sound_pasta.loop();
@@ -1211,14 +1250,12 @@ function S03_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", 100, trimid );
+	
 
-	SKT.wind = p5.Vector.lerp( SKT.wind, createVector( movedX, movedY ).mult(0.1), 0.1 );
-	SKT.wind.x *= 0.99;
-	SKT.wind.y *= 0.3;
+	//SKT.wind = p5.Vector.lerp( SKT.wind, createVector( movedX, movedY ).mult(0.1), 0.1 );
+	//SKT.wind.x *= 0.99;
+	//SKT.wind.y *= 0.3;
+
 
 	for( var i = 1; i < 8; ++i ){
 		SKT.V[i].add( SKT.wind );
@@ -1302,9 +1339,11 @@ function build_S04(){
 			end: PH_end };
 
 	SKT.img = loadImage( 'data04/desenho.png' );
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.bgx = width * .1 - (0);
 
-	SKT.Scl = VIEWPORT.h / 1380.0;
+	SKT.Scl = VIEWPORT.h / 1580.0;
+	var heightAdjustment = 50
 
 	SKT.src = Array(4);
 	SKT.src[0] = { x: 251, y: 28, w: 210, h: 213 };
@@ -1319,7 +1358,7 @@ function build_S04(){
 	for (var i = 0; i < 4; i++) {
 		SKT.O[i] = createVector( 0.5 * SKT.src[i].w, 0.5 * SKT.src[i].h ).mult(SKT.Scl);
 		SKT.V[i] = createVector( (SKT.Scl * SKT.src[i].x) + SKT.O[i].x + SKT.bgx,
-							     (SKT.Scl * SKT.src[i].y) + SKT.O[i].y );
+							     (SKT.Scl * SKT.src[i].y) + SKT.O[i].y + heightAdjustment);
 		SKT.A[i] = SKT.V[i].copy();
 		SKT.td[i] = { w: SKT.Scl * SKT.src[i].w, h: SKT.Scl * SKT.src[i].h };
 		SKT.contact[i] = 0;
@@ -1347,25 +1386,41 @@ function build_S04_step5(){
 	loop();
 }
 
-function S04_draw(){
-	if( mouseX == pmouseX && mouseY == pmouseY ){
-		let M = createVector( mouseX, mouseY );
-		for (var i = 0; i < 4; i++) {
-			let d = p5.Vector.dist( SKT.V[i], M );
-			if( d < SKT.td[i].w * 0.5 ){
-				SKT.contact[i] += 1;
-				break;
-			}
+function S04_draw() {
+	let x = mouseX;
+	let y = mouseY;
+
+	if (touches.length > 0) {
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+	}
+
+	let M = createVector(x, y);
+/* 	for (let i = 0; i < 4; i++) {
+		let d = p5.Vector.dist(SKT.V[i], M);
+		if (d < SKT.td[i].w * 0.5) {
+			SKT.contact[i] += 1;
+			break;
+		}
+	} */
+
+	for (let i = 0; i < 4; i++) {
+		let d = p5.Vector.dist(SKT.V[i], M);
+		if (d < SKT.td[i].w * 0.5) {
+			SKT.V[i].x -= 0.12 * (SKT.V[i].x - x);
+			SKT.V[i].y -= 0.12 * (SKT.V[i].y - y);
+			SKT.contact[i] += 2;
+			break;
 		}
 	}
 
-
-	for( var i = 0; i < 4; ++i ){
-		if( SKT.contact[i] > 0 ){
-			if( !(SKT.voices[i].isPlaying()) ) SKT.voices[i].play();
-			if( SKT.contact[i] > 45 ) SKT.contact[i] = 45;
+	for (let i = 0; i < 4; ++i) {
+		if (SKT.contact[i] > 0) {
+			if (!SKT.voices[i].isPlaying()) SKT.voices[i].play();
+			if (SKT.contact[i] > 45) SKT.contact[i] = 45;
 			SKT.contact[i] -= 1;
-			if( SKT.contact[i] <= 0 ) SKT.voices[i].stop();
+			if (SKT.contact[i] <= 0) SKT.voices[i].stop();
 		}
 	}
 
@@ -1373,19 +1428,22 @@ function S04_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("E SE\nA FLOR\nESTE FIO-ARQUIVO-VIVO\nESTÁ NUM TEMPO HISTÓRICO\nNÃO-LINEAR?", 100, trimid );
-	
 
-	for (var i = 0; i < 4; i++) {
+	for (let i = 0; i < 4; i++) {
+		let spring = p5.Vector.sub(SKT.A[i], SKT.V[i]).mult(0.05);
+		SKT.V[i].add(spring);
 
-		let spring = p5.Vector.sub( SKT.A[i], SKT.V[i] ).mult(0.05);
-		SKT.V[i].add( spring );
-
-		image( SKT.img, SKT.V[i].x - SKT.O[i].x, SKT.V[i].y - SKT.O[i].y, SKT.td[i].w, SKT.td[i].h, 
-					    SKT.src[i].x, SKT.src[i].y, SKT.src[i].w, SKT.src[i].h );
+		image(
+			SKT.img,
+			SKT.V[i].x - SKT.O[i].x,
+			SKT.V[i].y - SKT.O[i].y,
+			SKT.td[i].w,
+			SKT.td[i].h,
+			SKT.src[i].x,
+			SKT.src[i].y,
+			SKT.src[i].w,
+			SKT.src[i].h
+		);
 	}
 }
 function S04_mouseMoved(){
