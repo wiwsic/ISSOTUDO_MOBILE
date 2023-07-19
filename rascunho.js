@@ -652,6 +652,47 @@ function S03_draw(){
 	}
 }
 
-//
+//s04 bkp
+
+function S04_draw(){
+	if( mouseX == pmouseX && mouseY == pmouseY ){
+		let M = createVector( mouseX, mouseY );
+		for (var i = 0; i < 4; i++) {
+			let d = p5.Vector.dist( SKT.V[i], M );
+			if( d < SKT.td[i].w * 0.5 ){
+				SKT.contact[i] += 1;
+				break;
+			}
+		}
+	}
+
+
+	for( var i = 0; i < 4; ++i ){
+		if( SKT.contact[i] > 0 ){
+			if( !(SKT.voices[i].isPlaying()) ) SKT.voices[i].play();
+			if( SKT.contact[i] > 45 ) SKT.contact[i] = 45;
+			SKT.contact[i] -= 1;
+			if( SKT.contact[i] <= 0 ) SKT.voices[i].stop();
+		}
+	}
+
+	clear();
+
+	fill(255);
+	noStroke();
+	
+	
+
+	for (var i = 0; i < 4; i++) {
+
+		let spring = p5.Vector.sub( SKT.A[i], SKT.V[i] ).mult(0.05);
+		SKT.V[i].add( spring );
+
+		image( SKT.img, SKT.V[i].x - SKT.O[i].x, SKT.V[i].y - SKT.O[i].y, SKT.td[i].w, SKT.td[i].h, 
+					    SKT.src[i].x, SKT.src[i].y, SKT.src[i].w, SKT.src[i].h );
+	}
+}
+
+
 
 
