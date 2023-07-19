@@ -558,40 +558,100 @@ function S01_end() {
 //////
 
 
-bkp do HTML
+/////
+
+// para controle, segue s03_draw antes das alterações:
+
+function S03_draw(){
+
+	let M = createVector( mouseX, mouseY );
+	if( p5.Vector.dist( M, SKT.V[5] ) < 140 * SKT.Scl ){
+		if( !(SKT.sound_pasta.isPlaying()) ){
+			SKT.sound_pasta.loop();
+		}
+	}
+	else{
+		SKT.sound_pasta.pause();
+	}
+	if( p5.Vector.dist( M, SKT.V[6] ) < 200 * SKT.Scl ){
+		if( !(SKT.sound_flor.isPlaying()) ){
+			SKT.sound_flor.loop();
+		}
+	}
+	else{
+		SKT.sound_flor.pause();
+	}
+
+	if( p5.Vector.dist( M, SKT.V[3] ) < 140 * SKT.Scl ||
+		p5.Vector.dist( M, SKT.V[4] ) < 140 * SKT.Scl ||
+		p5.Vector.dist( M, SKT.V[7] ) < 230 * SKT.Scl ){
+		if( !(SKT.sound_folhas.isPlaying()) ){
+			SKT.sound_folhas.loop();
+		}
+	}
+	else{
+		SKT.sound_folhas.pause();
+	}
+
+	clear();
+
+	//noFill();
+	//stroke(255);
+	//ellipse( SKT.V[5].x, SKT.V[5].y, 80, 80 );
+	//ellipse( SKT.V[6].x, SKT.V[6].y, 80, 80 );
+
+	fill(255);
+	noStroke();
+	
+
+	SKT.wind = p5.Vector.lerp( SKT.wind, createVector( movedX, movedY ).mult(0.1), 0.1 );
+	SKT.wind.x *= 0.99;
+	SKT.wind.y *= 0.3;
+
+	for( var i = 1; i < 8; ++i ){
+		SKT.V[i].add( SKT.wind );
+		SKT.V[i].add( SKT.normals[i] );
+	}
+
+	SKT.RV[1]= SKT.V[0].copy();
+	SKT.RV[2]= SKT.V[0].copy();
+	SKT.RV[3]= SKT.V[1].copy();
+	SKT.RV[5]= SKT.V[2].copy();
+
+	//top leaf root -> left branch
+	SKT.RV[4] = maintain( SKT.V[1], SKT.V[0], SKT.bo[0] );
+	//flower root -> right branch
+	SKT.RV[6] = maintain( SKT.V[2], SKT.V[0], SKT.bo[1] );
+	//right leaf root -> right branch
+	SKT.RV[7] = maintain( SKT.V[2], SKT.V[0], SKT.bo[2] );
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      touch-action: none;
-    }
-  </style>
-  <script language="javascript" type="text/javascript" src="p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="p5.sound.js"></script>
-  <script id="script-loader" language="javascript" type="text/javascript"></script>
-</head>
+	propagate(  SKT.V[0], SKT.V[1], SKT.l[0] );
+	propagate(  SKT.V[0], SKT.V[2], SKT.l[1] );
+	propagate( SKT.RV[3], SKT.V[3], SKT.l[2] );
+	propagate( SKT.RV[4], SKT.V[4], SKT.l[3] );
+	propagate( SKT.RV[5], SKT.V[5], SKT.l[4] );
+	propagate( SKT.RV[6], SKT.V[6], SKT.l[5] );
+	propagate( SKT.RV[7], SKT.V[7], SKT.l[6] );
 
-<body text="#EEEEEE" link="#DDDDDD" vlink="#FFFFFF" bgcolor="#8a0d12">
+	for( var i = 0; i < 8; ++i ){
+		push();
+		if( SKT.RV[i] == null ){
+			translate( SKT.V[i].x, SKT.V[i].y );
+		}
+		else{
+			translate( SKT.RV[i].x, SKT.RV[i].y );
+			rotate( atan2( SKT.V[i].y - SKT.RV[i].y, SKT.V[i].x - SKT.RV[i].x ) + SKT.da[i] );
+		}
 
-  <div id="sketch-holder" style="width: 100vw; height: 100vh; position: absolute; z-index: 2;"></div>
+		image( SKT.img[i], -SKT.O[i].x, -SKT.O[i].y, SKT.td[i].w, SKT.td[i].h );
+		pop();
+		//noFill();
+		//stroke(0);
+		//ellipse( SKT.V[i].x, SKT.V[i].y, SKT.contact_rad );
+	}
+}
 
-  <script>
-    var scriptLoader = document.getElementById('script-loader');
-    if (window.matchMedia("(max-width: 600px)").matches) {
-      // Dispositivo móvel
-      scriptLoader.src = 'isso-mobile.js';
-    } else {
-      // Outros dispositivos
-      scriptLoader.src = 'isso.js';
-    }
-  </script>
+//
 
-</body>
-</html>
 
