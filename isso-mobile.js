@@ -1,3 +1,9 @@
+let largura;
+let altura;
+let DIM;
+let MValue;
+let DEFAULT_SIZE = 100;
+
 
 function propagate( adj, vec, l ){
 	let dx = adj.x - vec.x;
@@ -379,10 +385,37 @@ class S00_SAGUAO {
 	  noStroke();
   
 	  // Proporções com base no tamanho original da tela
-	  var textFontSize = width * 0.10;
+
+	  if (window.innerWidth <= 390) {
+		console.log('390')
+		var textFontSize = width * 0.08;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.48 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		var textFontSize = width * 0.08;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		var textFontSize = width * 0.10;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+	  }
+/* 	  var textFontSize = width * 0.10;
 	  var textLeadingSize = textFontSize * 0.91;
 	  var textPositionY = height * 0.5 - textFontSize * 2.2;
-	  var textWidth = width * 0.869;
+	  var textWidth = width * 0.869; */
   
 	  textAlign(CENTER, CENTER);
 	  textFont(DINcon, textFontSize * 2.1);
@@ -458,7 +491,25 @@ function build_S01() {
 
 	SKT.bg = loadImage( 'data01/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
-	SKT.bgx = width * .1 - (60);
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = width * .1 - (10);
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = width * .1 - (60);
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = width * .1;
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = width * .1 - (50);
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = width * .1 - (60);
+	  }
+	
 
 	console.log( 'launching 1st step' );
 	loadStrings( 'data01/fio.txt', build_S01_step1, failed );
@@ -800,6 +851,24 @@ function build_S02(){
 	SKT.bg = loadImage( 'data02/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgx = width * .1 - (60);
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = width * .1 - (10);
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = width * .1 - (60);
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = width * .1 - (10);
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = width * .1 - (50);
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = width * .1 - (60);
+	  }
 
 	SKT.img = loadImage('data02/algodoes.png');
 	loadStrings("data02/algodata.txt", build_S02_step1, failed );
@@ -960,7 +1029,7 @@ function S02_draw(){
 	push();
 	translate( SKT.bgx, 0 );
 	scale( SKT.Scl );
-	image( SKT.bg, width * 0.4, height * 1.1 );
+	image( SKT.bg, width * 0.4, height * 0.9 );
 	pop();
 
 	/*
@@ -1059,8 +1128,27 @@ function build_S03(){
 
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgx = width * .1 - (60);
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = width * .1 - (10);
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = width * .1 - (60);
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = width * .1 - (10);
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = width * .1 - (50);
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = width * .1 - (60);
+	  }
 
 	SKT.Scl = VIEWPORT.h / 1699.0;
+	SKT.Sclx = VIEWPORT.w / 700.0;
 	//SKT.Scl = VIEWPORT.h / 1199.0;
 
 	SKT.dst = Array(8);
@@ -1082,6 +1170,7 @@ function build_S03(){
 	SKT.V[5]= createVector( 452.553, 832.634 ); //file folder.png:  file tip
 	SKT.V[6]= createVector( 457.385, 484.764 ); //flower.png:       flower tip
 	SKT.V[7]= createVector( 752.108, 665.141 ); //right leaf.png:   right leaf tip
+
 
 	var heightAdjustment = 220.5; // Valor de ajuste para diminuir a altura dos elementos
 
@@ -1298,6 +1387,9 @@ function S03_draw(){
 		//noFill();
 		//stroke(0);
 		//ellipse( SKT.V[i].x, SKT.V[i].y, SKT.contact_rad );
+		
+		//fill(0);
+		//ellipse(width/2, height/2,400 * SKT.Scl)
 	}
 }
 
@@ -1346,18 +1438,32 @@ function build_S04(){
 	var heightAdjustment = 50
 
 	SKT.src = Array(4);
+/* 	SKT.src[0] = { x: 251, y: 28, w: 210, h: 213 };
+	SKT.src[1] = { x: 221, y: 324, w: 321, h: 236 };
+	SKT.src[2] = { x: 195, y: 681, w: 303, h: 243 };
+	SKT.src[3] = { x: 172, y: 1009, w: 396, h: 354 }; */
 	SKT.src[0] = { x: 251, y: 28, w: 210, h: 213 };
 	SKT.src[1] = { x: 221, y: 324, w: 321, h: 236 };
 	SKT.src[2] = { x: 195, y: 681, w: 303, h: 243 };
 	SKT.src[3] = { x: 172, y: 1009, w: 396, h: 354 };
+
 	SKT.A = Array(4);
 	SKT.V = Array(4);
 	SKT.O = Array(4);
 	SKT.td = Array(4);
 	SKT.contact = Array(4);		
-	for (var i = 0; i < 4; i++) {
+	/* for (var i = 0; i < 4; i++) {
 		SKT.O[i] = createVector( 0.5 * SKT.src[i].w, 0.5 * SKT.src[i].h ).mult(SKT.Scl);
 		SKT.V[i] = createVector( (SKT.Scl * SKT.src[i].x) + SKT.O[i].x + SKT.bgx,
+							     (SKT.Scl * SKT.src[i].y) + SKT.O[i].y + heightAdjustment);
+		SKT.A[i] = SKT.V[i].copy();
+		SKT.td[i] = { w: SKT.Scl * SKT.src[i].w, h: SKT.Scl * SKT.src[i].h };
+		SKT.contact[i] = 0;
+	} */
+
+	for (var i = 0; i < 4; i++) {
+		SKT.O[i] = createVector( 0.5 * SKT.src[i].w, 0.5 * SKT.src[i].h ).mult(SKT.Scl);
+		SKT.V[i] = createVector( width/2,
 							     (SKT.Scl * SKT.src[i].y) + SKT.O[i].y + heightAdjustment);
 		SKT.A[i] = SKT.V[i].copy();
 		SKT.td[i] = { w: SKT.Scl * SKT.src[i].w, h: SKT.Scl * SKT.src[i].h };
@@ -1445,6 +1551,8 @@ function S04_draw() {
 			SKT.src[i].h
 		);
 	}
+	//fill(0);
+	//ellipse(width/2, height/2,400 * SKT.Scl)
 }
 function S04_mouseMoved(){
 	let M = createVector( mouseX, mouseY );
@@ -2573,6 +2681,8 @@ class S11_CREDITOS{
 
 
 
+var currentPageTitle = ""; // Variável para armazenar o nome da página atual
+
 
 
 function load_skt(){
@@ -2652,6 +2762,7 @@ function load_skt(){
 			SKT = new S11_CREDITOS();
 			break;
 	}
+	currentPageTitle = titulos[INDEX];
 }
 
 
@@ -2667,15 +2778,17 @@ function preload(){
 }
 
 function setup() {
-	//document.addEventListener('touchstart', touchStarted);
-/* 	let w = document.getElementById('sketch-holder').clientWidth
-	let h = document.getElementById('sketch-holder').clientHeight */
-	//var w = window.innerWidth - 10;
-	//var h = window.innerHeight - 20;
+
 	var w = window.innerWidth;
 	var h = window.innerHeight;
 	var canvas = createCanvas(w, h);
+	//var canvas = createCanvas(1080,2400);
+
 	canvas.parent('sketch-holder');
+
+	DIM = Math.max(w, h);
+	MValue = DIM / DEFAULT_SIZE;
+	MValue = MValue;
 	
 
 	cx = w / 2;
@@ -2695,25 +2808,25 @@ function setup() {
 
 	titulos = Array(22);
 	titulos[0] = "Início"
-	titulos[1] = "Pés de algodão-Descrição";
+	titulos[1] = "Pés de algodão";
 	titulos[2] = "Pés de algodão";
-	titulos[3] = "Seres eletro-parixara no algodoeiro-Descrição";
+	titulos[3] = "Seres eletro-parixara no algodoeiro";
 	titulos[4] = "Seres eletro-parixara no algodoeiro";
-	titulos[5] = "Arquivo algodão-Descrição";
+	titulos[5] = "Arquivo algodão";
 	titulos[6] = "Arquivo algodão";
-	titulos[7] = "Algodão canta ausências-Descrição";
+	titulos[7] = "Algodão canta ausências";
 	titulos[8] = "Algodão canta ausências";
-	titulos[9] = "Kinharyd-rezado-Descrição";
+	titulos[9] = "Kinharyd-rezado";
 	titulos[10] = "Kinharyd-rezado";
-	titulos[11] = "Das ausências, mas sempre estivemos aqui-Descrição";
+	titulos[11] = "Das ausências, mas sempre estivemos aqui";
 	titulos[12] = "Das ausências, mas sempre estivemos aqui";
-	titulos[13] = "Tecer o fio-forte-Descrição";
+	titulos[13] = "Tecer o fio-forte";
 	titulos[14] = "Tecer o fio-forte";
-	titulos[15] = "Antes de eu morrê, já sabe-Descrição";
+	titulos[15] = "Antes de eu morrê, já sabe";
 	titulos[16] = "Antes de eu morrê, já sabe";
-	titulos[17] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo-Descrição";
+	titulos[17] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
 	titulos[18] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
-	titulos[19] = "O que é arquivo?-Descrição";
+	titulos[19] = "O que é arquivo?";
 	titulos[20] = "O que é arquivo?";
 	titulos[21] = "Ficha técnica";
 
@@ -2734,7 +2847,7 @@ function draw() {
 
 	SKT.draw();
 	//background(200,0,110)
-	if( INDEX > 0 ){
+	/* if( INDEX > 0 ){
 		fill(255);
 		if( mouseX < VIEWPORT.x  ){
 			noStroke();
@@ -2751,9 +2864,9 @@ function draw() {
 		}
 		else noStroke();
 		triangle( VIEWPORT.r, tritop, VIEWPORT.r, tribot, width, trimid );
-	}
+	} */
 
-	push();
+/* 	push();
 	stroke(255);
 	strokeWeight(2);
 	for( var i = 0; i <= 21; i ++ ){
@@ -2778,8 +2891,50 @@ function draw() {
 		}
 		ellipse( dootsx + i *dootss, dootsy, dootsd );
 	}
+	pop(); */
+	push();
+	textSize(20);
+	textAlign(CENTER, CENTER);
+	fill(255);
+	noStroke();
+	if (INDEX > 0) {
+	text(INDEX + "/21", width / 2, 0 + 20);
+	}
+	text(currentPageTitle, width / 2, height - 20);
 	pop();
+  
+  // Renderizar os triângulos para navegação entre as páginas
+  if (INDEX > 0) {
+    renderLeftTriangle();
+  }
+  if (INDEX < 21) {
+    renderRightTriangle();
+  }
 }
+
+function renderLeftTriangle() {
+	// Renderizar triângulo apontando para a esquerda (seta esquerda)
+	push();
+	fill(255);
+	noStroke();
+	var x = 15; // Margem de 5 pixels do início da tela
+	var y = height - 20;
+	var triangleSize = 15;
+	triangle(x, y, x + triangleSize, y + triangleSize * 0.6, x + triangleSize, y - triangleSize * 0.6);
+	pop();
+  }
+  
+  function renderRightTriangle() {
+	// Renderizar triângulo apontando para a direita (seta direita)
+	push();
+	fill(255);
+	noStroke();
+	var x = width - 15; // Margem de 5 pixels do fim da tela
+	var y = height - 20;
+	var triangleSize = 15;
+	triangle(x, y, x - triangleSize, y + triangleSize * 0.6, x - triangleSize, y - triangleSize * 0.6);
+	pop();
+  }
 
 function mouseMoved() {
 
@@ -2806,7 +2961,7 @@ function mouseReleased(){
 	if( coordinates_in_rct( mouseX, mouseY, VIEWPORT ) ){
 		SKT.mouseReleased();
 	}
-	else if( cashmeoutsy ){
+	/* else if( cashmeoutsy ){
 		if( mouseY > VIEWPORT.h ){
 			let pi = INDEX;
 			INDEX = round( (mouseX - dootsx) / dootss );
@@ -2824,7 +2979,7 @@ function mouseReleased(){
 			load_skt();
 		}
 	}
-	cashmeoutsy = false;
+	cashmeoutsy = false; */
 }
 
 function keyReleased(){
@@ -2847,13 +3002,32 @@ function keyReleased(){
 }
 
 function touchStarted() {
-/* 	if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
-	  SKT.mousePressed();
-	} else {
-	  cashmeoutsy = true;
-	} */
+	console.log('toque iniciado')
 	SKT.mousePressed();
-	//console.log(touches[0].x,touches[0].y)
+
+	if (INDEX > 0) {
+		var leftTriangleX = 15; // Margem de 5 pixels do início da tela
+		var leftTriangleY = height - 20;
+		var triangleSize = 60;
+		if (dist(mouseX, mouseY, leftTriangleX, leftTriangleY) < triangleSize) {
+			console.log('condição atingida')
+		  INDEX--;
+		  load_skt();
+		  return; // Retorna para evitar que os dois triângulos sejam verificados ao mesmo tempo
+		}
+	  }
+	
+	  // Verificar o toque no triângulo direito (avançar para a direita)
+	  if (INDEX < 21) {
+		var rightTriangleX = width - 15; // Margem de 5 pixels do fim da tela
+		var rightTriangleY = height - 20;
+		var triangleSize = 60;
+		if (dist(mouseX, mouseY, rightTriangleX, rightTriangleY) < triangleSize) {
+			console.log('condição atingida')
+		  INDEX++;
+		  load_skt();
+		}
+	  }
 	
 }
 
@@ -2861,36 +3035,11 @@ function touchStarted() {
   function touchMoved() {
 	SKT.mouseDragged();
   }
-  
-/*   function touchEnded() {
-	SKT.mouseReleased();
-	if (touches.length > 0) {
-		if (coordinates_in_rct(touches[0].x, touches[0].y, VIEWPORT)) {
-			SKT.mouseReleased();
-		} else if (cashmeoutsy) {
-			if (touches[0].y > VIEWPORT.h) {
-				let pi = INDEX;
-				INDEX = round((touches[0].x - dootsx) / dootss);
-				if (INDEX !== pi && INDEX >= 0 && INDEX <= 21) {
-					load_skt();
-				}
-			} else {
-				if (touches[0].x < VIEWPORT.x) {
-					INDEX -= 1;
-				} else INDEX += 1;
-
-				INDEX = constrain(INDEX, 0, 21);
-				load_skt();
-			}
-		}
-		cashmeoutsy = false;
-		
-	}
-} */
 
 function touchEnded() {
+	console.log('toque solto')
 	SKT.mouseReleased();
-	if (touches.length > 0) {
+/* 	if (touches.length > 0) {
 		SKT.mouseReleased();
 		 if (cashmeoutsy) {
 			if (touches[0].y > VIEWPORT.h) {
@@ -2910,8 +3059,10 @@ function touchEnded() {
 		}
 		cashmeoutsy = false;
 		
-	}
+	} */
 }
+
+
 
 
   
