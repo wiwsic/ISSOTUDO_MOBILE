@@ -1598,6 +1598,7 @@ class S05DESCRICAO{
 	mousePressed(){}
 	mouseDragged(){}
 	mouseReleased(){}
+	touchMoved(){}
 	end(){}
 }
 
@@ -1605,19 +1606,46 @@ class S05DESCRICAO{
 function build_S05(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
-	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
-	SKT.bgy = 0.2 * VIEWPORT.h;
+	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.bgx = 0 + (width * 0.1);
+	//SKT.bgy = 0.2 * VIEWPORT.h;
 
-	SKT.Scl = VIEWPORT.h / (1.68 * 682.0);
+	SKT.bgx = width/2;
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = 0 + (width * 0.15);
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = 0 + (width * 0.1);
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = 0 + (width * 0.2);
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = 0 + (width * 0.12);
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = 0 + (width * 0.12);
+	  }
+
+
+	SKT.bgy = height/4 + height/8;
+
+	//SKT.Scl = VIEWPORT.h / (1.68 * 682.0);
+	SKT.Scl = VIEWPORT.h / (1.68 * 1000.0);
 
 	SKT.img = loadImage('data05/desenho--05.png');
 	SKT.puff = loadImage('data05/puff.png');
 
 	frameRate(24);
 	
-	SKT.rct = { x: (267 * SKT.Scl) + SKT.bgx, y: (185 * SKT.Scl) + SKT.bgy, w: 241 * SKT.Scl, h: 344 * SKT.Scl };
+	//SKT.rct = { x: (267 * SKT.Scl) + SKT.bgx, y: (185 * SKT.Scl) + SKT.bgy, w: 241 * SKT.Scl, h: 344 * SKT.Scl };
+	SKT.rct = { x: VIEWPORT.x -35, y: VIEWPORT.y -35, w: VIEWPORT.w +70, h: VIEWPORT.h +70 };
 	SKT.src = createVector( 382, 322 ).mult(SKT.Scl);
 	SKT.src.x += SKT.bgx;
 	SKT.src.y += SKT.bgy;
@@ -1635,7 +1663,9 @@ function build_S05_step(){
 
 	SKT.veia_rezando.loop();
 	SKT.draw = S05_draw;
-	SKT.mouseMoved = S05_mouseMoved;
+	//SKT.mouseMoved = S05_mouseMoved;
+	SKT.touchMoved = S05_touchMoved;
+	SKT.touchEnded = S05_touchEnded;
 	SKT.end = S05_end;
 	loop();
 }
@@ -1646,17 +1676,16 @@ function S05_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", 100, trimid );
-
+	
 	push();
 	imageMode(CORNER);
 	translate( SKT.bgx, SKT.bgy );
 	scale( SKT.Scl);
 	image( SKT.img, 0, 0 );
 	pop();
+	
+	//rectMode(CENTER)
+	//rect(SKT.rct.x, SKT.rct.y, SKT.rct.w, SKT.rct.h);
 
 	if( SKT.breathe ){
 		let n = random(2,4);
@@ -1673,12 +1702,43 @@ function S05_draw(){
 		}
 	}
 }
-function S05_mouseMoved(){
+
+/* function S05_mouseMoved(){
+
+	x = mouseX;
+	x = mouseY;
+
+	if (touches.length > 0) {
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+	}
+
 	if( coordinates_in_rct( mouseX, mouseY, SKT.rct ) ){
 		SKT.breathe = true;
 	}
 	else SKT.breathe = false;
+} */
+
+function S05_touchMoved(){
+
+
+	if (touches.length > 0) {
+		console.log('s05 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+		if( coordinates_in_rct( x, y, SKT.rct ) ){
+		SKT.breathe = true;
+	}
+	else SKT.breathe = false;
+	}
+
 }
+
+function S05_touchEnded() {
+	SKT.breathe = false;
+  }
 
 function S05_end(){
 	SKT.veia_rezando.stop();
@@ -3034,11 +3094,13 @@ function touchStarted() {
   
   function touchMoved() {
 	SKT.mouseDragged();
+	SKT.touchMoved();
   }
 
 function touchEnded() {
 	console.log('toque solto')
 	SKT.mouseReleased();
+	SKT.touchEnded();
 /* 	if (touches.length > 0) {
 		SKT.mouseReleased();
 		 if (cashmeoutsy) {
