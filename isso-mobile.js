@@ -2013,7 +2013,7 @@ function S06_touchMoved(){
 		y = touch.y;
 		for( var i = 0; i < 7; ++i ){
 			if( coordinates_in_rct( x, y, SKT.dsts[i] ) ){
-				SKT.contact_cabecas[i] += 2;
+				SKT.contact_cabecas[i] += 4;
 			}
 		}
 }
@@ -2060,6 +2060,7 @@ class S07DESCRICAO{
 function build_S07(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
 	SKT.bg = loadImage('data07/desenho--07.png');
@@ -2069,8 +2070,39 @@ function build_S07(){
 
 	SKT.bgx = VIEWPORT.x + 0.35 * VIEWPORT.w;
 	SKT.bgy = 0.06 * VIEWPORT.h;
-
 	SKT.Scl = (0.6*VIEWPORT.w) / 1444.0;
+
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 750.0;
+
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.05);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
+	  }
+
+	  
 
 
 	SKT.V = Array(2);
@@ -2125,6 +2157,8 @@ function build_S07_step(){
 	SKT.mousePressed = S07_mousePressed;
 	SKT.mouseDragged = S07_mouseDragged;
 	SKT.mouseReleased = S07_mouseReleased;
+	SKT.touchMoved = S07_touchMoved;
+	SKT.touchEnded = S07_touchEnded;
 	loop();
 }
 
@@ -2139,10 +2173,7 @@ function S07_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("\"ISSO TUDO\nNÃO ME DIZ\nNADA.\"\nE SE\nTECERMOS NOSSOS\nCAMINHOS?", 100, trimid );
+
 
 	push();
 	imageMode(CORNER);
@@ -2174,7 +2205,7 @@ function S07_draw(){
 
 
 	stroke(255);
-	strokeWeight(4);
+	strokeWeight(2);
 	for (var i = SKT.fios.length - 1; i >= 0; i--) {
 		SKT.fios[i].draw();
 	}
@@ -2234,8 +2265,40 @@ function S07_mouseDragged(){
 	}
 }
 
+function S07_touchMoved(){
+	if (touches.length > 0) {
+		console.log('s07 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+
+		let touchVelX = x - prevTouchX;
+		let touchVelY = y - prevTouchY;
+		//let touchVel = createVector(touchVelX, touchVelY);
+		prevTouchX = x;
+		prevTouchY = y;
+
+		let M = createVector( x, y );
+		let algo = false;
+		for( var i = 0; i < 2; ++i ){
+			if( p5.Vector.sub( SKT.V[i], M ).magSq() < SKT.radsq[i] ){
+				let f = createVector( touchVelX, touchVelY ).mult(0.09);
+				SKT.V[i].add( f );
+				algo = true;
+			}
+		}
+
+		
+
+}
+}
+
 function S07_mouseReleased(){
 	SKT.D = -1;
+}
+
+function S07_touchEnded(){
+	
 }
 
 
@@ -2938,7 +3001,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 2;
+	INDEX = 14;
 	load_skt();
 }
 
