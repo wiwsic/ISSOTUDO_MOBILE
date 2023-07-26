@@ -3148,7 +3148,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 20;
+	INDEX = 0;
 	load_skt();
 }
 
