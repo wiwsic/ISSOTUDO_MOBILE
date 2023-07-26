@@ -2338,6 +2338,7 @@ class S08DESCRICAO{
 function build_S08(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
 	SKT.bg = loadImage( 'data08/bg.png' );
@@ -2580,6 +2581,7 @@ class S09DESCRICAO{
 function build_S09(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
 	SKT.bg = loadImage( 'data09/desenho--09.png' );
@@ -2589,6 +2591,44 @@ function build_S09(){
 
 	SKT.bgx = 0.5 * (width - (SKT.Scl * SKT.bg.width));
 	SKT.bgy = 0.1 * VIEWPORT.h;
+
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.1 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.2 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.04 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.12 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.12 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+	  }
+	
+
 	let bgt = createVector( SKT.bgx, SKT.bgy );
 
 	SKT.eyes = Array(2);
@@ -2617,23 +2657,32 @@ function build_S09_step(){
 
 function S09_draw(){
 
-	if( dist( mouseX, mouseY, SKT.C.x, SKT.C.y ) < SKT.R ){
-		if( !(SKT.sound.isPlaying()) ){
-			SKT.sound.loop();
-		}
+	x = width/2
+	y = height/2
+
+	if (touches.length > 0) {
+		console.log('s09 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
 	}
+
+	if (touches.length > 0) {
+		if( !(SKT.sound.isPlaying()) ){
+			SKT.sound.play();
+		}
+
+	}
+
 	else{
-		SKT.sound.pause();
+		SKT.sound.stop();
 	}
 
 	clear();
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", 100, trimid );
+
 
 	let tx = 3.5 * cos(SKT.tet);
 	let ty = 3.5 * sin(2 * SKT.tet); 
@@ -2651,7 +2700,7 @@ function S09_draw(){
 
 	fill('#8a0d12');
 	noStroke();
-	let M = createVector( mouseX, mouseY );
+	let M = createVector( x, y );
 	for (var i = 0; i < 2; i++) {
 		let dif = p5.Vector.sub( M, SKT.eyes[i].pos );
 		let m = map( dif.mag(), 0, width*0.45, 0, SKT.eyes[i].rad );
@@ -2702,6 +2751,7 @@ class S10DESCRICAO{
 function build_S10(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
 	
@@ -2709,6 +2759,33 @@ function build_S10(){
 	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 
 	SKT.Scl = VIEWPORT.h / 1391.0;
+
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = 0 + (width * 0.1);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+	  }
+
+
 	SKT.FL = 6;
 	//SKT.FLsq = sq(SKT.FL);
 
@@ -2735,29 +2812,43 @@ function build_S10_step2(){
 	//SKT.sound.loop();
 	SKT.draw = S10_draw;
 	SKT.mouseMoved = S10_mouseMoved;
+	SKT.touchMoved = S10_touchMoved;
+	//SKT.touchEnded = S10_touchEnded;
 	SKT.end = S10_end;
 	loop();
 }
 
 function S10_draw(){
 
-	if( dist( mouseX, mouseY, SKT.fio.P[SKT.lp].x , SKT.fio.P[SKT.lp].y ) < 100 ){
+	if (touches.length > 0) {
+		console.log('s10 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+	}
+
+	if (touches.length > 0) {
+		if( !(SKT.sound.isPlaying()) ){
+			SKT.sound.play();
+		}
+
+	} else{
+		SKT.sound.stop();
+	}
+
+/* 	if( dist( mouseX, mouseY, SKT.fio.P[SKT.lp].x , SKT.fio.P[SKT.lp].y ) < 100 ){
 		if( !(SKT.sound.isPlaying()) ){
 			SKT.sound.loop();
 		}
 	}
 	else{
 		SKT.sound.pause();
-	}
+	} */
 
 	clear();
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("AFINAL, MEUS PARENTES,\nO QUE É ARQUIVO?\nOU AINDA:\nO QUE É ARQUIVO-\nINDÍGENA?", 100, trimid );
 
 	stroke(255);
 	strokeWeight(6*SKT.Scl);
@@ -2790,11 +2881,44 @@ function S10_draw(){
 	}
 }
 function S10_mouseMoved(){
-	SKT.vel.x += movedX * 0.05;
+/* 	SKT.vel.x += movedX * 0.05;
 	SKT.fio.P[0].y += movedY * 0.4;
 	if( SKT.fio.P[0].y > SKT.head.y ) SKT.fio.P[0].y = SKT.head.y;
-	SKT.fio.drag_fio( 0, SKT.FL );
+	SKT.fio.drag_fio( 0, SKT.FL ); */
 }
+
+function S10_touchMoved(){
+	
+	if (touches.length > 0) {
+		console.log('s10 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+		let touchVelX = x - prevTouchX;
+		let touchVelY = y - prevTouchY;
+		prevTouchX = x;
+		prevTouchY = y;
+
+		SKT.vel.x += touchVelX * 0.05;
+		SKT.fio.P[0].y += touchVelY * 0.4;
+		if( SKT.fio.P[0].y > SKT.head.y ) SKT.fio.P[0].y = SKT.head.y;
+		SKT.fio.drag_fio( 0, SKT.FL );
+
+	/* 	if( !(SKT.sound.isPlaying()) ){
+			SKT.sound.loop();
+		} */
+		
+
+	}
+
+}
+
+function S10_touchEnded(){
+	SKT.sound.pause();
+}
+
+
+
 function S10_end(){
 	SKT.sound.stop();
 }
@@ -3024,7 +3148,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 16;
+	INDEX = 20;
 	load_skt();
 }
 
