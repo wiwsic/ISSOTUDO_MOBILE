@@ -824,7 +824,6 @@ class S02DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-
 		var textFontSize = width * 0.10;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
@@ -1781,6 +1780,7 @@ class S06DESCRICAO{
 function build_S06(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
+			touchMoved: PH_touchMoved, touchEnded: PH_touchEnded,
 			end: PH_end };
 
 	SKT.img = loadImage('data06/desenho--06.png');
@@ -1788,8 +1788,33 @@ function build_S06(){
 
 	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgy = VIEWPORT.y + 0.1 * VIEWPORT.h;
+	SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
 
-	SKT.Scl = VIEWPORT.h / (1.1 * 1121.0);
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
+
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		SKT.bgx = 0 + (width * 0.1);
+		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.bgx = 0 + (width * 0.2);
+		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.bgx = 0 + (width * 0.1);
+		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.bgx = 0 + (width * 0.12);
+	  }
+
+	
 
 	SKT.srcs = Array(7);
 	SKT.srcs[0] = { x: 182, y: 0,   w: 151, h: 171 };
@@ -1889,18 +1914,20 @@ function build_S06_step7(){
 function build_S06_step8(){
 	SKT.draw = S06_draw;
 	SKT.mouseMoved = S06_mouseMoved;
+	SKT.touchMoved = S06_touchMoved;
+	SKT.touchEnded = S06_touchEnded;
 	loop();
 }
 
 function S06_draw(){
 
-	if( mouseX == pmouseX && mouseY == pmouseY ){
+/* 	if( mouseX == pmouseX && mouseY == pmouseY ){
 		for( var i = 0; i < 7; ++i ){
 			if( coordinates_in_rct( mouseX, mouseY, SKT.dsts[i] ) ){
 				SKT.contact_cabecas[i] += 1;
 			}
 		}
-	}
+	} */
 
 	if( SKT.contact_fio > 0 ){
 		if( !(SKT.sound_fio.isPlaying()) ) SKT.sound_fio.play();
@@ -1936,15 +1963,9 @@ function S06_draw(){
 
 	fill(255);
 	noStroke();
-	var textFontSize = width * 0.10;
-	var textLeadingSize = textFontSize * 0.91;
-	var textPositionY = height * 0.5 - textFontSize * 2.2;
-	var textWidth = width * 0.869;
 
-	textAlign(CENTER, CENTER);
-	textFont( DINcon, textFontSize * 1.1 );
-	textLeading(textLeadingSize * 1.1);
-	text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", width * 0.5, trimid );
+
+
 
 	push();
 	imageMode(CORNER);
@@ -1958,7 +1979,12 @@ function S06_draw(){
 						SKT.srcs[i].x, SKT.srcs[i].y, SKT.srcs[i].w, SKT.srcs[i].h );
 	}
 
+/* 	for (let a = 0; a < 7; a++) {
+		fill(0)
+		rect(SKT.dsts[a].x,SKT.dsts[a].y,SKT.dsts[a].w,SKT.dsts[a].h)
+	} */
 
+	
 	
 	stroke('#8a0d12');
 	strokeWeight(7);
@@ -1972,11 +1998,29 @@ function S06_draw(){
 	}
 }
 function S06_mouseMoved(){
-	for( var i = 0; i < 7; ++i ){
+/* 	for( var i = 0; i < 7; ++i ){
 		if( coordinates_in_rct( mouseX, mouseY, SKT.dsts[i] ) ){
 			SKT.contact_cabecas[i] += 2;
 		}
-	}
+	} */
+}
+
+function S06_touchMoved(){
+	if (touches.length > 0) {
+		console.log('s06 toque iniciado')
+		let touch = touches[0];
+		x = touch.x;
+		y = touch.y;
+		for( var i = 0; i < 7; ++i ){
+			if( coordinates_in_rct( x, y, SKT.dsts[i] ) ){
+				SKT.contact_cabecas[i] += 2;
+			}
+		}
+}
+}
+
+function S06_touchEnded(){
+	
 }
 
 
@@ -2894,7 +2938,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 0;
+	INDEX = 2;
 	load_skt();
 }
 
