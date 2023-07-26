@@ -2341,16 +2341,43 @@ function build_S08(){
 			end: PH_end };
 
 	SKT.bg = loadImage( 'data08/bg.png' );
+	
 	SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+	SKT.Scl = VIEWPORT.h / 888.0;
+	SKT.bgx = 0.5 * (width - (SKT.Scl * SKT.bg.width));
+
+	if (window.innerWidth <= 390) {
+		console.log('390')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.05 * (width - (SKT.Scl * SKT.bg.width));
+
+	  } else if (window.innerWidth <= 450){
+		console.log('450')
+		//SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.15 * (width - (SKT.Scl * SKT.bg.width));
+
+	  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+		console.log('560-760')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.001 * (width - (SKT.Scl * SKT.bg.width));
+		  
+	  } else if (window.innerWidth <= 560){
+		console.log('560')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.05 * (width - (SKT.Scl * SKT.bg.width));
+		  
+	  } else if (window.innerWidth <= 600){
+		console.log('600')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.15 * (width - (SKT.Scl * SKT.bg.width));
+	  }
+
 
 	SKT.flores = Array(5);
 	for (var i = 0; i < 5; i++) {
 		SKT.flores[i] = loadImage( 'data08/flor'+(i+1)+'.png' );
 	}
-
-	SKT.Scl = VIEWPORT.h / 888.0;
-
-	SKT.bgx = 0.5 * (width - (SKT.Scl * SKT.bg.width));
 
 	let dst = Array(5);
 	dst[0] = { x: 160, y: 147, w: 165, h: 190 };
@@ -2451,10 +2478,6 @@ function S08_draw(){
 
 	fill(255);
 	noStroke();
-	textAlign(LEFT, CENTER);
-	textFont( DINcon, 50 );
-	textLeading(50);
-	text("UM FIO DE ALGODÃO,\nUM CANTO,\nUMA REDE DE DORMIR,\nUM GRAFISMO\nSÃO DOCUMENTOS\nHISTÓRICOS.\nARQUIVOS-VIVOS.", 100, trimid );
 
 	push();
 	imageMode(CORNER);
@@ -3001,7 +3024,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 14;
+	INDEX = 16;
 	load_skt();
 }
 
