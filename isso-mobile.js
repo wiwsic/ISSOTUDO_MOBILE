@@ -3136,19 +3136,36 @@ class S12_AGRADECIMENTOS{
 
 	constructor(){
 		
-		textAlign(LEFT, TOP);
-		textFont( DINcon, 15 );
-		textLeading(17);
+		var textFontSize = width * 0.06;
+		var textLeadingSize = textFontSize * 1.2;
+		if (window.innerWidth <= 390) {
+			console.log('390')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+	
+		  } else if (window.innerWidth <= 450){
+			console.log('450')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+		  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+			console.log('560-760')
+			var textFontSize = width * 0.05;
+			var textLeadingSize = textFontSize * 1.2;
+			  
+		  } else if (window.innerWidth <= 560){
+			console.log('560')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+			  
+		  } else if (window.innerWidth <= 600){
+			console.log('600')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+		  }
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize );
+		textLeading(textLeadingSize);
 
-		//this.tx = ;
-		//this.ty = this.tx + (14 * ( textAscent() + textDescent() ));
-		//this.tw = textWidth("https://introscopia.github.io/");
-		let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
-		this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
-		this.introskp.x = VIEWPORT.x + (0.44 * VIEWPORT.w);
-		this.introskp.y = VIEWPORT.y + (0.1  * VIEWPORT.h) + b.h;
-		this.introskp.b = this.introskp.y + this.introskp.h;
-		this.introskp.r = this.introskp.x + this.introskp.w;
 
 		loop();
 	}
@@ -3157,25 +3174,52 @@ class S12_AGRADECIMENTOS{
 		clear();
 		fill(255);
 		noStroke();
-		textAlign(LEFT, TOP);
-		textFont( DINcon, 15 );
-		textLeading(17);
+		var textFontSize = width * 0.06;
+		var textLeadingSize = textFontSize * 1.2;
+		if (window.innerWidth <= 390) {
+			console.log('390')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+	
+		  } else if (window.innerWidth <= 450){
+			console.log('450')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+		  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+			console.log('560-760')
+			var textFontSize = width * 0.05;
+			var textLeadingSize = textFontSize * 1.2;
+			  
+		  } else if (window.innerWidth <= 560){
+			console.log('560')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+			  
+		  } else if (window.innerWidth <= 600){
+			console.log('600')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+		  }
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize );
+		textLeading(textLeadingSize);
+		textAlign(CENTER, CENTER);
+
 
 
 
 		noStroke();
+/* 		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
+			  VIEWPORT.x + 0.74 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.20 * VIEWPORT.w ); */
+		
 		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
-			  VIEWPORT.x + 0.74 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.20 * VIEWPORT.w );
+			  width * 0.5, height * 0.5);
+		
 	}
 	mouseMoved(){}
 	mousePressed(){}
 	mouseDragged(){}
 	mouseReleased(){
-		if (mouseButton === LEFT) {
-			if( coordinates_in_rct( mouseX, mouseY, this.introskp ) ){
-				window.open("http://introscopia.github.io/");
-			}
-		}
 	}
 	end(){}
 }
@@ -3341,7 +3385,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 21;
+	INDEX = 0;
 	load_skt();
 }
 
