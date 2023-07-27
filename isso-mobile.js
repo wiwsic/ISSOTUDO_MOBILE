@@ -2946,6 +2946,203 @@ class S11_CREDITOS{
 		//this.tx = ;
 		//this.ty = this.tx + (14 * ( textAscent() + textDescent() ));
 		//this.tw = textWidth("https://introscopia.github.io/");
+
+
+		let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+		this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+		this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+		this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+		this.introskp.b = this.introskp.y + this.introskp.h;
+		this.introskp.r = this.introskp.x + this.introskp.w;
+
+		let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+		this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+		this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+		this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+		this.wiw.b = this.wiw.y + this.wiw.h;
+		this.wiw.r = this.wiw.x + this.wiw.w;
+
+		
+
+		if (window.innerWidth <= 390) {
+			console.log('390')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+
+	
+		  } else if (window.innerWidth <= 450){
+			console.log('450')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+
+		  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+			console.log('560-760')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+
+			  
+		  } else if (window.innerWidth <= 560){
+			console.log('560')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+
+			  
+		  } else if (window.innerWidth <= 600){
+			console.log('600')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+
+		  }
+
+
+
+		loop();
+	}
+
+	draw(){
+		clear();
+		fill(255);
+		noStroke();
+		textAlign(LEFT, TOP);
+		textFont( DINcon, 15 );
+		textLeading(17);
+
+		text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+			  0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+
+		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+			  0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+		
+			  if (window.innerWidth <= 390) {
+				console.log('390')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+
+			  } else if (window.innerWidth <= 450){
+				console.log('450')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+
+			  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
+				console.log('560-760')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+				  
+			  } else if (window.innerWidth <= 560){
+				console.log('560')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+				  
+			  } else if (window.innerWidth <= 600){
+				console.log('600')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+
+			  }
+
+		stroke(255);
+		strokeWeight(1);
+		line( this.introskp.x, this.introskp.b, this.introskp.r, this.introskp.b );
+		line( this.wiw.x, this.wiw.b, this.wiw.r, this.wiw.b );
+
+
+	}
+	mouseMoved(){}
+	mousePressed(){}
+	mouseDragged(){}
+	mouseReleased(){
+		if (mouseButton === LEFT) {
+			if( coordinates_in_rct( mouseX, mouseY, this.introskp ) ){
+				window.open("http://introscopia.github.io/");
+			} else 	if( coordinates_in_rct( mouseX, mouseY, this.wiw ) ){
+				window.open("https://wiwsic.xyz/");
+			}
+		}
+	}
+	end(){}
+}
+
+class S12_AGRADECIMENTOS{
+
+	constructor(){
+		
+		textAlign(LEFT, TOP);
+		textFont( DINcon, 15 );
+		textLeading(17);
+
+		//this.tx = ;
+		//this.ty = this.tx + (14 * ( textAscent() + textDescent() ));
+		//this.tw = textWidth("https://introscopia.github.io/");
 		let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
 		this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
 		this.introskp.x = VIEWPORT.x + (0.44 * VIEWPORT.w);
@@ -2964,15 +3161,7 @@ class S11_CREDITOS{
 		textFont( DINcon, 15 );
 		textLeading(17);
 
-		text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
-			  VIEWPORT.x + 0.14 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.25 * VIEWPORT.w );
 
-		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/", 
-			  VIEWPORT.x + 0.44 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.25 * VIEWPORT.w );
-
-		stroke(255);
-		strokeWeight(1);
-		line( this.introskp.x, this.introskp.b, this.introskp.r, this.introskp.b );
 
 		noStroke();
 		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
@@ -3075,6 +3264,9 @@ function load_skt(){
 		case 21:
 			SKT = new S11_CREDITOS();
 			break;
+		case 22:
+			SKT = new S12_AGRADECIMENTOS();
+			break;
 	}
 	currentPageTitle = titulos[INDEX];
 }
@@ -3120,7 +3312,7 @@ function setup() {
 	dootss = 1.4*dootsd;
 	dootsx = VIEWPORT.x + (0.42*VIEWPORT.w) - 8*dootss;
 
-	titulos = Array(22);
+	titulos = Array(23);
 	titulos[0] = "Início"
 	titulos[1] = "Pés de algodão";
 	titulos[2] = "Pés de algodão";
@@ -3143,12 +3335,13 @@ function setup() {
 	titulos[19] = "O que é arquivo?";
 	titulos[20] = "O que é arquivo?";
 	titulos[21] = "Ficha técnica";
+	titulos[22] = "Agradecimentos";
 
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 0;
+	INDEX = 21;
 	load_skt();
 }
 
@@ -3212,7 +3405,7 @@ function draw() {
 	fill(255);
 	noStroke();
 	if (INDEX > 0) {
-	text(INDEX + "/21", width / 2, 0 + 20);
+	text(INDEX + "/22", width / 2, 0 + 20);
 	}
 	text(currentPageTitle, width / 2, height - 20);
 	pop();
@@ -3221,7 +3414,7 @@ function draw() {
   if (INDEX > 0) {
     renderLeftTriangle();
   }
-  if (INDEX < 21) {
+  if (INDEX < 22) {
     renderRightTriangle();
   }
 }
@@ -3298,11 +3491,11 @@ function mouseReleased(){
 
 function keyReleased(){
 	if (keyCode === LEFT_ARROW) {
-		INDEX = constrain( INDEX - 1, 0, 21 );
+		INDEX = constrain( INDEX - 1, 0, 22 );
 		load_skt();
 	}
 	else if (keyCode === RIGHT_ARROW) {
-		INDEX = constrain( INDEX + 1, 0, 21 );
+		INDEX = constrain( INDEX + 1, 0, 22 );
 		load_skt();
 	}
 	else if( keyCode === 36 ){//home
@@ -3332,7 +3525,7 @@ function touchStarted() {
 	  }
 	
 	  // Verificar o toque no triângulo direito (avançar para a direita)
-	  if (INDEX < 21) {
+	  if (INDEX < 22) {
 		var rightTriangleX = width - 15; // Margem de 5 pixels do fim da tela
 		var rightTriangleY = height - 20;
 		var triangleSize = 60;
