@@ -497,7 +497,10 @@ function build_S01() {
 
 	SKT.bg = loadImage( 'data01/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
-	if (window.innerWidth <= 390) {
+		if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = width * .01 - (10);
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = width * .1 - (10);
 	  } else if (window.innerWidth <= 450){
@@ -859,7 +862,10 @@ function build_S02(){
 	SKT.bg = loadImage( 'data02/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgx = width * .1 - (60);
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = width * .01 - (10);
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = width * .1 - (10);
 	  } else if (window.innerWidth <= 450){
@@ -1144,7 +1150,10 @@ function build_S03(){
 
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgx = width * .1 - (60);
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = width * .01 - (10);
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = width * .1 - (10);
 	  } else if (window.innerWidth <= 450){
@@ -1632,7 +1641,10 @@ function build_S05(){
 	//SKT.bgy = 0.2 * VIEWPORT.h;
 
 	SKT.bgx = width/2;
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = 0 + (width * 0.10);
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = 0 + (width * 0.15);
 	  } else if (window.innerWidth <= 450){
@@ -1812,7 +1824,11 @@ function build_S06(){
 	SKT.bgy = VIEWPORT.y + 0.1 * VIEWPORT.h;
 	SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
 
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = 0 + (width * 0.1);
+		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = 0 + (width * 0.15);
 		SKT.Scl = VIEWPORT.h / (1.1 * 1221.0);
@@ -2097,7 +2113,13 @@ function build_S07(){
 	SKT.bgy = 0.06 * VIEWPORT.h;
 	SKT.Scl = (0.6*VIEWPORT.w) / 1444.0;
 
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 750.0;
+
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
 		SKT.bgy = 0.28 * VIEWPORT.h;
@@ -2377,7 +2399,12 @@ function build_S08(){
 	SKT.Scl = VIEWPORT.h / 888.0;
 	SKT.bgx = 0.5 * (width - (SKT.Scl * SKT.bg.width));
 
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = -.1 * (width - (SKT.Scl * SKT.bg.width));
+		
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.Scl = VIEWPORT.h / 958.0;
 		SKT.bgx = -.05 * (width - (SKT.Scl * SKT.bg.width));
@@ -2626,7 +2653,14 @@ function build_S09(){
 	SKT.bgx = 0.5 * (width - (SKT.Scl * SKT.bg.width));
 	SKT.bgy = 0.1 * VIEWPORT.h;
 
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = -0.2 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+		
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
@@ -2800,7 +2834,12 @@ function build_S10(){
 
 	SKT.Scl = VIEWPORT.h / 1391.0;
 
-	if (window.innerWidth <= 390) {
+	if (window.innerWidth <= 362) {
+		console.log('362')
+		SKT.bgx = 0 + (width * 0.15);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+		
+	  } else if (window.innerWidth <= 390) {
 		console.log('390')
 		SKT.bgx = 0 + (width * 0.15);
 		SKT.Scl = VIEWPORT.h / 1391.0;
@@ -3008,7 +3047,23 @@ class S11_CREDITOS{
 
 		
 
-		if (window.innerWidth <= 390) {
+		if (window.innerWidth <= 362) {
+			console.log('362')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.174  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+			
+		  } else if (window.innerWidth <= 390) {
 			console.log('390')
 			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
 			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
@@ -3127,7 +3182,15 @@ class S11_CREDITOS{
 		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 			  0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 		
-			  if (window.innerWidth <= 390) {
+			  if (window.innerWidth <= 362) {
+				console.log('362')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+
+			  } else if (window.innerWidth <= 390) {
 				console.log('390')
 				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
@@ -3204,7 +3267,12 @@ class S12_AGRADECIMENTOS{
 		
 		var textFontSize = width * 0.06;
 		var textLeadingSize = textFontSize * 1.2;
-		if (window.innerWidth <= 390) {
+		if (window.innerWidth <= 362) {
+			console.log('362')
+			var textFontSize = width * 0.06;
+			var textLeadingSize = textFontSize * 1.2;
+			
+		  } else if (window.innerWidth <= 390) {
 			console.log('390')
 			var textFontSize = width * 0.06;
 			var textLeadingSize = textFontSize * 1.2;
