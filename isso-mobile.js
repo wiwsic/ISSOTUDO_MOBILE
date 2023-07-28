@@ -411,6 +411,12 @@ class S00_SAGUAO {
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		var textFontSize = width * 0.07;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
 	  }
 /* 	  var textFontSize = width * 0.10;
 	  var textLeadingSize = textFontSize * 0.91;
@@ -508,7 +514,10 @@ function build_S01() {
 	  } else if (window.innerWidth <= 600){
 		console.log('600')
 		SKT.bgx = width * .1 - (60);
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = width * .15 - (10);
+	}
 	
 
 	console.log( 'launching 1st step' );
@@ -867,7 +876,10 @@ function build_S02(){
 	  } else if (window.innerWidth <= 600){
 		console.log('600')
 		SKT.bgx = width * .1 - (60);
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = width * .1 - (10);
+	}
 
 	SKT.img = loadImage('data02/algodoes.png');
 	loadStrings("data02/algodata.txt", build_S02_step1, failed );
@@ -1028,7 +1040,12 @@ function S02_draw(){
 	push();
 	translate( SKT.bgx, 0 );
 	scale( SKT.Scl );
-	image( SKT.bg, width * 0.4, height * 0.9 );
+	//image( SKT.bg, width * 0.4, height * 0.9 );
+	if (window.innerWidth <= 600){
+		image( SKT.bg, width * 0.4, height * 0.9 );
+	} else if (window.innerWidth <= 1000){
+		image( SKT.bg, width * 0.3, height * 0.7 );
+	}
 	pop();
 
 	/*
@@ -1144,7 +1161,9 @@ function build_S03(){
 	  } else if (window.innerWidth <= 600){
 		console.log('600')
 		SKT.bgx = width * .1 - (60);
-	  }
+	  } else if (window.innerWidth <= 1000){
+		SKT.bgx = width * .25 - (60);
+	}
 
 	SKT.Scl = VIEWPORT.h / 1699.0;
 	SKT.Sclx = VIEWPORT.w / 700.0;
@@ -1630,7 +1649,10 @@ function build_S05(){
 	  } else if (window.innerWidth <= 600){
 		console.log('600')
 		SKT.bgx = 0 + (width * 0.12);
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = 0 + (width * 0.21);
+	}
 
 
 	SKT.bgy = height/4 + height/8;
@@ -1812,7 +1834,10 @@ function build_S06(){
 	  } else if (window.innerWidth <= 600){
 		console.log('600')
 		SKT.bgx = 0 + (width * 0.12);
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = 0 + (width * 0.21);
+	}
 
 	
 
@@ -2100,7 +2125,12 @@ function build_S07(){
 		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
 		SKT.bgy = 0.28 * VIEWPORT.h;
 		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = SKT.bgx = 0 + (width * 0.01);
+		SKT.bgy = 0.28 * VIEWPORT.h;
+		SKT.Scl = (0.6*VIEWPORT.w) / 800.0;
+	}
 
 	  
 
@@ -2372,7 +2402,11 @@ function build_S08(){
 		console.log('600')
 		SKT.Scl = VIEWPORT.h / 958.0;
 		SKT.bgx = -.15 * (width - (SKT.Scl * SKT.bg.width));
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.Scl = VIEWPORT.h / 958.0;
+		SKT.bgx = .05 * (width - (SKT.Scl * SKT.bg.width));
+	}
 
 
 	SKT.flores = Array(5);
@@ -2626,7 +2660,13 @@ function build_S09(){
 		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
 		SKT.bgx = -0.12 * (width - (SKT.Scl * SKT.bg.width));
 		SKT.bgy = 0.1 * VIEWPORT.h;
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
+		SKT.Scl = 0.7 * (VIEWPORT.h / 919.0);
+		SKT.bgx = 0.04 * (width - (SKT.Scl * SKT.bg.width));
+		SKT.bgy = 0.1 * VIEWPORT.h;
+	}
 	
 
 	let bgt = createVector( SKT.bgx, SKT.bgy );
@@ -2783,7 +2823,11 @@ function build_S10(){
 		console.log('600')
 		SKT.bgx = 0 + (width * 0.15);
 		SKT.Scl = VIEWPORT.h / 1391.0;
-	  }
+	  } else if (window.innerWidth <= 1000){
+		console.log('1000')
+		SKT.bgx = 0 + (width * 0.23);
+		SKT.Scl = VIEWPORT.h / 1391.0;
+	}
 
 
 	SKT.FL = 6;
@@ -3047,7 +3091,22 @@ class S11_CREDITOS{
 			this.wiw.b = this.wiw.y + this.wiw.h;
 			this.wiw.r = this.wiw.x + this.wiw.w;
 
-		  }
+		  } else if (window.innerWidth <= 1000){
+			console.log('1000')
+			let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
+			this.introskp.x = 0 + (0.57 * VIEWPORT.w);
+			this.introskp.y = VIEWPORT.y + (0.166  * VIEWPORT.h) + b.h;
+			this.introskp.b = this.introskp.y + this.introskp.h;
+			this.introskp.r = this.introskp.x + this.introskp.w;
+	
+			let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+			this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+			this.wiw.x = 0 + (0.57 * VIEWPORT.w);
+			this.wiw.y = VIEWPORT.y + (0.166  * VIEWPORT.h) + c.h;
+			this.wiw.b = this.wiw.y + this.wiw.h;
+			this.wiw.r = this.wiw.x + this.wiw.w;
+		}
 
 
 
@@ -3108,7 +3167,14 @@ class S11_CREDITOS{
 		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
-			  }
+			  } else if (window.innerWidth <= 1000){
+				console.log('1000')
+				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+  
+		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
+			}
 
 		stroke(255);
 		strokeWeight(1);
@@ -3161,7 +3227,11 @@ class S12_AGRADECIMENTOS{
 			console.log('600')
 			var textFontSize = width * 0.06;
 			var textLeadingSize = textFontSize * 1.2;
-		  }
+		  } else if (window.innerWidth <= 1000){
+			console.log('1000')
+			var textFontSize = width * 0.04;
+			var textLeadingSize = textFontSize * 1.4;
+		}
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize );
 		textLeading(textLeadingSize);
@@ -3199,7 +3269,11 @@ class S12_AGRADECIMENTOS{
 			console.log('600')
 			var textFontSize = width * 0.06;
 			var textLeadingSize = textFontSize * 1.2;
-		  }
+		  } else if (window.innerWidth <= 1000){
+			console.log('1000')
+			var textFontSize = width * 0.04;
+			var textLeadingSize = textFontSize * 1.4;
+		}
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize );
 		textLeading(textLeadingSize);
