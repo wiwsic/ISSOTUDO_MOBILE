@@ -856,7 +856,7 @@ function S01_mouseMoved() {
 class S02DESCRICAO{
 
 	constructor(){
-		loop();
+		//loop();
 	}
 
 	draw(){
@@ -3743,7 +3743,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 22;
+	INDEX = 4;
 	load_skt();
 }
 
