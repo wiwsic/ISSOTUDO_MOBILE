@@ -23,7 +23,7 @@
     var scriptLoader = document.getElementById('script-loader');
     var sketchHolder = document.getElementById('sketch-holder');
 
-    if (window.matchMedia("(max-width: 1000px)").matches) {
+    if (window.matchMedia("(max-width: 1300px)").matches) {
       sketchHolder.style.width = '100vw';
       sketchHolder.style.height = '100vh';
     } else {
@@ -31,7 +31,7 @@
       sketchHolder.style.height = '98vh';
     }
 
-    if (window.matchMedia("(max-width: 1000px)").matches) {
+    if (window.matchMedia("(max-width: 1300px)").matches) {
       // Dispositivo móvel
       scriptLoader.src = 'isso-mobile.js';
     } else {
