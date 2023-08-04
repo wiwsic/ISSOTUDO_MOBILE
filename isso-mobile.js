@@ -527,7 +527,10 @@ function build_S01() {
 
 	SKT.bg = loadImage( 'data01/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
-		if (window.innerWidth <= 362) {
+		if (window.innerWidth <= 362 && window.innerHeight <= 610) {
+		console.log('362-610')
+		SKT.bgx = width * .01 - (10);
+	  } else if (window.innerWidth <= 362) {
 		console.log('362')
 		SKT.bgx = width * .01 - (10);
 	  } else if (window.innerWidth <= 390) {
@@ -913,7 +916,10 @@ function build_S02(){
 	SKT.bg = loadImage( 'data02/desenho.png' );
 	//SKT.bgx = VIEWPORT.x + 0.6 * VIEWPORT.w;
 	SKT.bgx = width * .1 - (60);
-	if (window.innerWidth <= 362) {
+	if (window.innerWidth <= 362 && window.innerHeight <= 610) {
+		console.log('362-610')
+		SKT.bgx = width * .01 - (10);
+	  } else if (window.innerWidth <= 362) {
 		console.log('362')
 		SKT.bgx = width * .01 - (10);
 	  } else if (window.innerWidth <= 390) {
@@ -999,15 +1005,29 @@ function build_S02_step1( arr ){
 	SKT.wind = createVector(0,0);
 	SKT.wtet = 0;
 
-	SKT.soundboard = Array(20);
+	//SKT.soundboard = Array(20);
+
 	//for (var i = 0; i < 20; i++) {
 	//	console.log('function build_S02_step'+(i+1)+'(){');
 	//	console.log('\tSKT.soundboard['+i+'] = loadSound(\'data02/'+(i+1)+'.wav\', build_S02_step'+(i+2)+', failed );\n\tSKT.soundboard['+i+'].playMode(\'sustain\');\n}\n' );
 	//}
-	SKT.soundboard[0] = loadSound('data02/1.wav', build_S02_step2, failed );
-	SKT.soundboard[0].playMode('sustain');
+
+	//antes
+	//SKT.soundboard[0] = loadSound('data02/1.wav', build_S02_step2, failed );
+	//SKT.soundboard[0].playMode('sustain');
+
+	SKT.soundboard = [];
+	for (let i = 0; i < 20; i++) {
+        let sound = loadSound('data02/mp3/' + (i + 1) + '.mp3');
+        sound.playMode('sustain');
+        SKT.soundboard.push(sound);
+    }
+
+	build_S02_step21();
+
 }
-function build_S02_step2(){
+
+/* function build_S02_step2(){
 	SKT.soundboard[1] = loadSound('data02/2.wav', build_S02_step3, failed );
 	SKT.soundboard[1].playMode('sustain');
 }
@@ -1082,7 +1102,8 @@ function build_S02_step19(){
 function build_S02_step20(){
 	SKT.soundboard[19] = loadSound('data02/20.wav', build_S02_step21, failed );
 	SKT.soundboard[19].playMode('sustain');
-}
+} */
+
 function build_S02_step21(){
 	SKT.draw = S02_draw;
 	SKT.mouseMoved = S02_mouseMoved;
@@ -1092,7 +1113,7 @@ function build_S02_step21(){
 }
 
 function S02_draw(){
-
+	//ellipse(width/2,height/2,100)
 	if( mouseX == pmouseX && mouseY == pmouseY ){
 		if( mouseX > SKT.GX && mouseX < SKT.GR &&
 			mouseY > SKT.GY && mouseY < SKT.GB ){
@@ -1119,7 +1140,6 @@ function S02_draw(){
 	push();
 	translate( SKT.bgx, 0 );
 	scale( SKT.Scl );
-	//image( SKT.bg, width * 0.4, height * 0.9 );
 	if (window.innerWidth <= 600){
 		image( SKT.bg, width * 0.4, height * 0.9 );
 	} else if (window.innerWidth <= 920 && window.innerHeight >= 1500){
@@ -1134,17 +1154,6 @@ function S02_draw(){
 		image( SKT.bg, width * 0.15, height * 0.4 );
 	}
 	pop();
-
-	/*
-	let gw = 1055 * SKT.Scl * 0.2;
-	let gh = 657 * SKT.Scl * 0.25;
-	stroke(0);
-	noFill();
-	for( var i = 0; i < 5; ++i ){
-		for( var j = 0; j < 4; ++j ){
-			rect( SKT.GX + i * gw, SKT.GY + j * gh, gw, gh );
-		}
-	}*/
 
 	SKT.wind.x = 0.3 * cos( SKT.wtet );
 	SKT.wtet += 0.01;
@@ -4048,7 +4057,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 20;
+	INDEX = 14;
 	load_skt();
 }
 
