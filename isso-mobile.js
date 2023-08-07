@@ -2069,6 +2069,7 @@ function build_S06(){
 	SKT.P = [];//Array(pn);
 	SKT.hooks = Array(7);
 	SKT.anchors = Array(7);
+	SKT.anchorsBoca = Array(7);
 	SKT.O = Array(7);
 	let c = 0;
 	for( var i = 0; i < 6; ++i ){
@@ -2089,6 +2090,19 @@ function build_S06(){
 	//console.log( pn, c );
 	SKT.hooks[6] = c-1;
 	SKT.anchors[6] = SKT.P[c-1].copy();
+
+	// adicionar for loop que vai copiar a pos das ancoras
+
+	for( var i = 0; i < 6; ++i ){
+	SKT.anchorsBoca[i] = SKT.anchors[i].copy();
+	}
+	SKT.anchorsBoca[6] = SKT.P[c-1].copy();
+
+	//
+
+
+
+
 	SKT.O[6] = createVector( SKT.dsts[6].x - SKT.P[c-1].x, SKT.dsts[6].y - SKT.P[c-1].y );
 
 	SKT.force = createVector( 3, 0 );
@@ -2162,6 +2176,10 @@ function S06_draw(){
 			SKT.P[ SKT.hooks[i] ].add( F );
 			SKT.dsts[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
 			SKT.dsts[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
+			//SKT.anchorsBoca[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
+			//SKT.anchorsBoca[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
+			SKT.anchorsBoca[i].x = SKT.dsts[i].x + (SKT.dsts[i].w/2);
+			SKT.anchorsBoca[i].y = SKT.dsts[i].y + (SKT.dsts[i].h/2);
 			SKT.force.rotate( 0.02 );
 			drag_fio_l( SKT.P, SKT.L, SKT.hooks[i] );
 		}
@@ -2170,9 +2188,15 @@ function S06_draw(){
 			SKT.P[ SKT.hooks[i] ].add( F );
 			SKT.dsts[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
 			SKT.dsts[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
+			//SKT.anchorsBoca[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
+			//SKT.anchorsBoca[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
+			SKT.anchorsBoca[i].x = SKT.dsts[i].x + (SKT.dsts[i].w/2);
+			SKT.anchorsBoca[i].y = SKT.dsts[i].y + (SKT.dsts[i].h/2);
 			drag_fio_l( SKT.P, SKT.L, SKT.hooks[i] );
 		}
 	}
+
+
 
 	clear();
 
@@ -2189,6 +2213,26 @@ function S06_draw(){
 	image( SKT.bg, 0, 0 );
 	pop();
 
+	
+/* 	for (var i = 1; i < SKT.dsts.length; ++i) {
+		stroke('#8a0d12');
+		strokeWeight(7);
+        line(SKT.dsts[i].x + (SKT.dsts[i].w/2), SKT.dsts[i].y + (SKT.dsts[i].h/2), SKT.dsts[i - 1].x + (SKT.dsts[i - 1].w/2), SKT.dsts[i - 1].y + (SKT.dsts[i - 1].h/2));
+		stroke(255);
+		strokeWeight(4);
+		line(SKT.dsts[i].x + (SKT.dsts[i].w/2), SKT.dsts[i].y + (SKT.dsts[i].h/2), SKT.dsts[i - 1].x + (SKT.dsts[i - 1].w/2), SKT.dsts[i - 1].y + (SKT.dsts[i - 1].h/2));
+    } */
+
+	for (var i = 1; i < SKT.anchorsBoca.length; ++i) {
+		stroke('#a81015');
+		strokeWeight(5);
+		line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
+		stroke(255);
+		strokeWeight(1);
+		line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
+	}
+
+
 	for( var i = 0; i < 7; ++i ){
 		image( SKT.img, SKT.dsts[i].x, SKT.dsts[i].y, SKT.dsts[i].w, SKT.dsts[i].h,
 						SKT.srcs[i].x, SKT.srcs[i].y, SKT.srcs[i].w, SKT.srcs[i].h );
@@ -2196,21 +2240,45 @@ function S06_draw(){
 
 /* 	for (let a = 0; a < 7; a++) {
 		fill(0)
-		rect(SKT.dsts[a].x,SKT.dsts[a].y,SKT.dsts[a].w,SKT.dsts[a].h)
+		//rect(SKT.dsts[a].x,SKT.dsts[a].y,SKT.dsts[a].w,SKT.dsts[a].h)
+		//rect(V[i].x,V[i].y,100,100)
 	} */
 
-	
-	
 	stroke('#8a0d12');
 	strokeWeight(7);
+
+
+
+/* for (var i = 1; i < SKT.anchors.length; ++i) {
+	stroke('#8a0d12');
+	strokeWeight(7);
+	line(SKT.anchors[i].x, SKT.anchors[i].y, SKT.anchors[i - 1].x, SKT.anchors[i - 1].y);
+	stroke(255);
+	strokeWeight(4);
+	line(SKT.anchors[i].x, SKT.anchors[i].y, SKT.anchors[i - 1].x, SKT.anchors[i - 1].y);
+} */
+
+/* for (var i = 1; i < SKT.anchorsBoca.length; ++i) {
+	stroke('#8a0d12');
+	strokeWeight(7);
+	line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
+	stroke(255);
+	strokeWeight(4);
+	line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
+} */
+
+
+/* 	stroke('#8a0d12');
+	strokeWeight(7);
 	for( var i = 1; i < SKT.P.length; ++i ){
-		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
+		//line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
 	}
 	stroke(255);
 	strokeWeight(4);
 	for( var i = 1; i < SKT.P.length; ++i ){
-		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
-	}
+		//line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
+	} */
+
 }
 function S06_mouseMoved(){
 /* 	for( var i = 0; i < 7; ++i ){
@@ -4057,7 +4125,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 14;
+	INDEX = 0;
 	load_skt();
 }
 
