@@ -4201,6 +4201,16 @@ function draw() {
   if (INDEX < 22) {
     renderRightTriangle();
   }
+  if (INDEX == 22){
+	push();
+	textSize(20);
+	textAlign(CENTER, CENTER);
+	fill(255);
+	noStroke();
+	text("Início", width - 30, height - 20);
+	pop();
+  }
+
 }
 
 function renderLeftTriangle() {
@@ -4299,12 +4309,23 @@ function touchStarted() {
 	if (INDEX > 0) {
 		var leftTriangleX = 15; // Margem de 5 pixels do início da tela
 		var leftTriangleY = height - 20;
-		var triangleSize = 60;
-		if (dist(mouseX, mouseY, leftTriangleX, leftTriangleY) < triangleSize) {
+		//var triangleSize = 60;
+		var regionSize = height * .045;
+		if (dist(mouseX, mouseY, leftTriangleX, leftTriangleY) < regionSize) {
 			console.log('condição atingida')
 		  INDEX--;
 		  load_skt();
-		  return; // Retorna para evitar que os dois triângulos sejam verificados ao mesmo tempo
+		  
+		} else if (INDEX == 22) {
+		var textX = width - 15; // Margem de 5 pixels do fim da tela
+		var textY = height - 20;
+		var regionSize = height * .045;
+		if (dist(mouseX, mouseY, textX, textY) < regionSize) {
+			console.log('condição atingida')
+		  INDEX = 0;
+		  load_skt();
+		}
+			return; // Retorna para evitar que os dois triângulos sejam verificados ao mesmo tempo
 		}
 	  }
 	
@@ -4312,8 +4333,9 @@ function touchStarted() {
 	  if (INDEX < 22) {
 		var rightTriangleX = width - 15; // Margem de 5 pixels do fim da tela
 		var rightTriangleY = height - 20;
-		var triangleSize = 60;
-		if (dist(mouseX, mouseY, rightTriangleX, rightTriangleY) < triangleSize) {
+		//var triangleSize = 60;
+		var regionSize = height * .045;
+		if (dist(mouseX, mouseY, rightTriangleX, rightTriangleY) < regionSize) {
 			console.log('condição atingida')
 		  INDEX++;
 		  load_skt();
