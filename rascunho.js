@@ -289,3 +289,35 @@ function S02_end() {
 		SKT.soundboard[i].stop();
 	}
   }
+
+
+
+  function touchStarted() {
+	console.log('toque iniciado')
+	SKT.mousePressed();
+
+	if (INDEX > 0) {
+		var leftTriangleX = 15; // Margem de 5 pixels do início da tela
+		var leftTriangleY = height - 20;
+		var triangleSize = 60;
+		if (dist(mouseX, mouseY, leftTriangleX, leftTriangleY) < triangleSize) {
+			console.log('condição atingida')
+		  INDEX--;
+		  load_skt();
+		  return; // Retorna para evitar que os dois triângulos sejam verificados ao mesmo tempo
+		}
+	  }
+	
+	  // Verificar o toque no triângulo direito (avançar para a direita)
+	  if (INDEX < 22) {
+		var rightTriangleX = width - 15; // Margem de 5 pixels do fim da tela
+		var rightTriangleY = height - 20;
+		var triangleSize = 60;
+		if (dist(mouseX, mouseY, rightTriangleX, rightTriangleY) < triangleSize) {
+			console.log('condição atingida')
+		  INDEX++;
+		  load_skt();
+		}
+	  }
+	
+}
