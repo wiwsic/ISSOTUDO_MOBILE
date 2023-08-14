@@ -2150,6 +2150,7 @@ function build_S06_step8(){
 
 function S06_draw(){
 
+
 /* 	if( mouseX == pmouseX && mouseY == pmouseY ){
 		for( var i = 0; i < 7; ++i ){
 			if( coordinates_in_rct( mouseX, mouseY, SKT.dsts[i] ) ){
@@ -2176,10 +2177,6 @@ function S06_draw(){
 			SKT.P[ SKT.hooks[i] ].add( F );
 			SKT.dsts[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
 			SKT.dsts[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
-			//SKT.anchorsBoca[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
-			//SKT.anchorsBoca[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
-			SKT.anchorsBoca[i].x = SKT.dsts[i].x + (SKT.dsts[i].w/2);
-			SKT.anchorsBoca[i].y = SKT.dsts[i].y + (SKT.dsts[i].h/2);
 			SKT.force.rotate( 0.02 );
 			drag_fio_l( SKT.P, SKT.L, SKT.hooks[i] );
 		}
@@ -2188,10 +2185,6 @@ function S06_draw(){
 			SKT.P[ SKT.hooks[i] ].add( F );
 			SKT.dsts[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
 			SKT.dsts[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
-			//SKT.anchorsBoca[i].x = SKT.P[ SKT.hooks[i] ].x + SKT.O[i].x;
-			//SKT.anchorsBoca[i].y = SKT.P[ SKT.hooks[i] ].y + SKT.O[i].y;
-			SKT.anchorsBoca[i].x = SKT.dsts[i].x + (SKT.dsts[i].w/2);
-			SKT.anchorsBoca[i].y = SKT.dsts[i].y + (SKT.dsts[i].h/2);
 			drag_fio_l( SKT.P, SKT.L, SKT.hooks[i] );
 		}
 	}
@@ -2223,14 +2216,14 @@ function S06_draw(){
 		line(SKT.dsts[i].x + (SKT.dsts[i].w/2), SKT.dsts[i].y + (SKT.dsts[i].h/2), SKT.dsts[i - 1].x + (SKT.dsts[i - 1].w/2), SKT.dsts[i - 1].y + (SKT.dsts[i - 1].h/2));
     } */
 
-	for (var i = 1; i < SKT.anchorsBoca.length; ++i) {
+/* 	for (var i = 1; i < SKT.anchorsBoca.length; ++i) {
 		stroke('#a81015');
 		strokeWeight(5);
 		line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
 		stroke(255);
 		strokeWeight(1);
 		line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
-	}
+	} */
 
 
 	for( var i = 0; i < 7; ++i ){
@@ -2244,40 +2237,36 @@ function S06_draw(){
 		//rect(V[i].x,V[i].y,100,100)
 	} */
 
-	stroke('#8a0d12');
-	strokeWeight(7);
-
-
-
-/* for (var i = 1; i < SKT.anchors.length; ++i) {
-	stroke('#8a0d12');
-	strokeWeight(7);
-	line(SKT.anchors[i].x, SKT.anchors[i].y, SKT.anchors[i - 1].x, SKT.anchors[i - 1].y);
-	stroke(255);
-	strokeWeight(4);
-	line(SKT.anchors[i].x, SKT.anchors[i].y, SKT.anchors[i - 1].x, SKT.anchors[i - 1].y);
-} */
-
-/* for (var i = 1; i < SKT.anchorsBoca.length; ++i) {
-	stroke('#8a0d12');
-	strokeWeight(7);
-	line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
-	stroke(255);
-	strokeWeight(4);
-	line(SKT.anchorsBoca[i].x, SKT.anchorsBoca[i].y, SKT.anchorsBoca[i - 1].x, SKT.anchorsBoca[i - 1].y);
-} */
 
 
 /* 	stroke('#8a0d12');
 	strokeWeight(7);
 	for( var i = 1; i < SKT.P.length; ++i ){
-		//line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
+		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
 	}
 	stroke(255);
 	strokeWeight(4);
 	for( var i = 1; i < SKT.P.length; ++i ){
-		//line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
+		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
 	} */
+
+	stroke('#8a0d12');
+strokeWeight(7);
+beginShape();
+noFill();
+for (var i = 0; i < SKT.P.length; ++i) {
+  vertex(SKT.P[i].x, SKT.P[i].y);
+}
+endShape();
+
+stroke(255);
+strokeWeight(4);
+beginShape();
+noFill();
+for (var i = 0; i < SKT.P.length; ++i) {
+  vertex(SKT.P[i].x, SKT.P[i].y);
+}
+endShape();
 
 }
 function S06_mouseMoved(){
@@ -4125,7 +4114,7 @@ function setup() {
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 0;
+	INDEX = 12;
 	load_skt();
 }
 
