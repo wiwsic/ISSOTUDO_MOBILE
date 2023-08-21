@@ -488,6 +488,34 @@ class S00_SAGUAO {
 
 //-----------------------------------------------------------------------------------------------------------
 
+class S00AVISO{
+
+	constructor(){
+		loop();
+	}
+
+	draw(){
+		clear();
+		fill(255);
+		noStroke();
+
+		var textFontSize = width * 0.06;
+		var textLeadingSize = textFontSize * 0.91;
+		var textPositionY = height * 0.5 - textFontSize * 2.2;
+		var textWidth = width * 0.869;
+
+		textAlign(CENTER, CENTER);
+		textFont( DINcon, textFontSize * 1.3 );
+		textLeading(textLeadingSize * 1.3);
+		text("Esta obra-digital inclui componentes\nde áudio e de\ninteratividade com o toque.", width * 0.5, trimid );
+	}
+	mouseMoved(){}
+	mousePressed(){}
+	mouseDragged(){}
+	mouseReleased(){}
+	end(){}
+}
+
 class S01DESCRICAO{
 
 	constructor(){
@@ -725,9 +753,17 @@ function S01_draw(){
 
 	stroke(255);
 	strokeWeight(5);
-	for( var i = 1; i < SKT.P.length; ++i ){
+	
+/* 	for( var i = 1; i < SKT.P.length; ++i ){
 		line( SKT.P[i].x, SKT.P[i].y, SKT.P[i-1].x, SKT.P[i-1].y );
+	} */
+
+	beginShape();
+	noFill();
+	for (var i = 0; i < SKT.P.length; ++i) {
+  		vertex(SKT.P[i].x, SKT.P[i].y);
 	}
+	endShape();	
 
 	let G = p5.Vector.sub( SKT.Wa.A, SKT.PE.V[3] ).mult(0.00004);
 	let R = createVector(0,0);
@@ -1840,7 +1876,8 @@ function build_S05(){
 
 	SKT.bounds = { x: VIEWPORT.x -35, y: VIEWPORT.y -35, w: VIEWPORT.w +70, h: VIEWPORT.h +70 };
 
-	SKT.veia_rezando = loadSound('data05/01-veia-rezando-18.wav', build_S05_step, failed );
+	//SKT.veia_rezando = loadSound('data05/01-veia-rezando-18.wav', build_S05_step, failed );
+	SKT.veia_rezando = loadSound('data05/mp3/01-veia-rezando-18.mp3', build_S05_step, failed );
 	SKT.veia_rezando.playMode('sustain');
 }
 
@@ -3975,69 +4012,72 @@ function load_skt(){
 			SKT = new S00_SAGUAO();
 			break;
 		case 1:
-			SKT = new S01DESCRICAO();
+			SKT = new S00AVISO();
 			break;
 		case 2:
-			build_S01();
+			SKT = new S01DESCRICAO();
 			break;
 		case 3:
-			SKT = new S02DESCRICAO();
+			build_S01();
 			break;
 		case 4:
-			build_S02();
+			SKT = new S02DESCRICAO();
 			break;
 		case 5:
-			SKT = new S03DESCRICAO();
+			build_S02();
 			break;
 		case 6:
-			build_S03();
+			SKT = new S03DESCRICAO();
 			break;
 		case 7:
-			SKT = new S04DESCRICAO();
+			build_S03();
 			break;
 		case 8:
-			build_S04();
+			SKT = new S04DESCRICAO();
 			break;
 		case 9:
-			SKT = new S05DESCRICAO();
+			build_S04();
 			break;
 		case 10:
-			build_S05();
+			SKT = new S05DESCRICAO();
 			break;
 		case 11:
-			SKT = new S06DESCRICAO();
+			build_S05();
 			break;
 		case 12:
-			build_S06();
+			SKT = new S06DESCRICAO();
 			break;
 		case 13:
-			SKT = new S07DESCRICAO();
+			build_S06();
 			break;
 		case 14:
-			build_S07();
+			SKT = new S07DESCRICAO();
 			break;
 		case 15:
-			SKT = new S08DESCRICAO();
+			build_S07();
 			break;
 		case 16:
-			build_S08();
+			SKT = new S08DESCRICAO();
 			break;
 		case 17:
-			SKT = new S09DESCRICAO();
+			build_S08();
 			break;
 		case 18:
-			build_S09();
+			SKT = new S09DESCRICAO();
 			break;
 		case 19:
-			SKT = new S10DESCRICAO();
+			build_S09();
 			break;
 		case 20:
-			build_S10();
+			SKT = new S10DESCRICAO();
 			break;
 		case 21:
-			SKT = new S11_CREDITOS();
+			build_S10();
 			break;
 		case 22:
+			SKT = new S11_CREDITOS();
+			break;
+		case 23:
 			SKT = new S12_AGRADECIMENTOS();
 			break;
 	}
@@ -4085,36 +4125,37 @@ function setup() {
 	dootss = 1.4*dootsd;
 	dootsx = VIEWPORT.x + (0.42*VIEWPORT.w) - 8*dootss;
 
-	titulos = Array(23);
+	titulos = Array(24);
 	titulos[0] = "Início"
-	titulos[1] = "Pés de algodão";
+	titulos[1] = "Obra-digital interativa"
 	titulos[2] = "Pés de algodão";
-	titulos[3] = "Seres eletro-parixara no algodoeiro";
+	titulos[3] = "Pés de algodão";
 	titulos[4] = "Seres eletro-parixara no algodoeiro";
-	titulos[5] = "Arquivo algodão";
+	titulos[5] = "Seres eletro-parixara no algodoeiro";
 	titulos[6] = "Arquivo algodão";
-	titulos[7] = "Algodão canta ausências";
+	titulos[7] = "Arquivo algodão";
 	titulos[8] = "Algodão canta ausências";
-	titulos[9] = "Kinharyd-rezado";
+	titulos[9] = "Algodão canta ausências";
 	titulos[10] = "Kinharyd-rezado";
-	titulos[11] = "Das ausências, mas sempre estivemos aqui";
+	titulos[11] = "Kinharyd-rezado";
 	titulos[12] = "Das ausências, mas sempre estivemos aqui";
-	titulos[13] = "Tecer o fio-forte";
+	titulos[13] = "Das ausências, mas sempre estivemos aqui";
 	titulos[14] = "Tecer o fio-forte";
-	titulos[15] = "Antes de eu morrê, já sabe";
+	titulos[15] = "Tecer o fio-forte";
 	titulos[16] = "Antes de eu morrê, já sabe";
-	titulos[17] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
+	titulos[17] = "Antes de eu morrê, já sabe";
 	titulos[18] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
-	titulos[19] = "O que é arquivo?";
+	titulos[19] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
 	titulos[20] = "O que é arquivo?";
-	titulos[21] = "Ficha técnica";
-	titulos[22] = "Agradecimentos";
+	titulos[21] = "O que é arquivo?";
+	titulos[22] = "Ficha técnica";
+	titulos[23] = "Agradecimentos";
 
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
 			end: PH_end };
 
-	INDEX = 12;
+	INDEX = 0;
 	load_skt();
 }
 
@@ -4178,7 +4219,7 @@ function draw() {
 	fill(255);
 	noStroke();
 	if (INDEX > 0) {
-	text(INDEX + "/22", width / 2, 0 + 20);
+	text(INDEX + "/23", width / 2, 0 + 20);
 	}
 	text(currentPageTitle, width / 2, height - 20);
 	pop();
@@ -4187,7 +4228,7 @@ function draw() {
   if (INDEX > 0) {
     renderLeftTriangle();
   }
-  if (INDEX < 22) {
+  if (INDEX < 23) {
     renderRightTriangle();
   }
   if (INDEX == 22){
@@ -4204,24 +4245,42 @@ function draw() {
 
 function renderLeftTriangle() {
 	// Renderizar triângulo apontando para a esquerda (seta esquerda)
-	push();
-	fill(255);
-	noStroke();
-	var x = 15; // Margem de 5 pixels do início da tela
+
+	var x = 15; // Margem de 15 pixels do início da tela
 	var y = height - 20;
 	var triangleSize = 15;
+	var regionSize = height * .045;
+
+	noStroke();
+	fill(255);
+	if (dist(mouseX, mouseY, x, y) < regionSize) {
+
+	  
+	}
+
+	
+	push();
 	triangle(x, y, x + triangleSize, y + triangleSize * 0.6, x + triangleSize, y - triangleSize * 0.6);
 	pop();
   }
   
   function renderRightTriangle() {
 	// Renderizar triângulo apontando para a direita (seta direita)
-	push();
-	fill(255);
-	noStroke();
-	var x = width - 15; // Margem de 5 pixels do fim da tela
+
+	var x = width - 15; // Margem de 15 pixels do fim da tela
 	var y = height - 20;
 	var triangleSize = 15;
+	var regionSize = height * .045;
+
+	noStroke();
+	fill(255);
+	if (dist(mouseX, mouseY, x, y) < regionSize) {
+	
+
+	}
+
+	
+	push();
 	triangle(x, y, x - triangleSize, y + triangleSize * 0.6, x - triangleSize, y - triangleSize * 0.6);
 	pop();
   }
@@ -4274,11 +4333,11 @@ function mouseReleased(){
 
 function keyReleased(){
 	if (keyCode === LEFT_ARROW) {
-		INDEX = constrain( INDEX - 1, 0, 22 );
+		INDEX = constrain( INDEX - 1, 0, 23 );
 		load_skt();
 	}
 	else if (keyCode === RIGHT_ARROW) {
-		INDEX = constrain( INDEX + 1, 0, 22 );
+		INDEX = constrain( INDEX + 1, 0, 23 );
 		load_skt();
 	}
 	else if( keyCode === 36 ){//home
@@ -4303,9 +4362,10 @@ function touchStarted() {
 		if (dist(mouseX, mouseY, leftTriangleX, leftTriangleY) < regionSize) {
 			console.log('condição atingida')
 		  INDEX--;
+		  PH_draw()
 		  load_skt();
 		  
-		} else if (INDEX == 22) {
+		} else if (INDEX == 23) {
 		var textX = width - 15; // Margem de 5 pixels do fim da tela
 		var textY = height - 20;
 		var regionSize = height * .045;
@@ -4319,7 +4379,7 @@ function touchStarted() {
 	  }
 	
 	  // Verificar o toque no triângulo direito (avançar para a direita)
-	  if (INDEX < 22) {
+	  if (INDEX < 23) {
 		var rightTriangleX = width - 15; // Margem de 5 pixels do fim da tela
 		var rightTriangleY = height - 20;
 		//var triangleSize = 60;
@@ -4327,6 +4387,7 @@ function touchStarted() {
 		if (dist(mouseX, mouseY, rightTriangleX, rightTriangleY) < regionSize) {
 			console.log('condição atingida')
 		  INDEX++;
+		  PH_draw()
 		  load_skt();
 		}
 	  }

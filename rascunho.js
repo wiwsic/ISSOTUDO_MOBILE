@@ -321,3 +321,107 @@ function S02_end() {
 	  }
 	
 }
+
+
+
+titulos = Array(24);
+titulos[0] = "Início"
+titulos[1] = "Interatividade com o Toque"
+titulos[2] = "Pés de algodão";
+titulos[3] = "Pés de algodão";
+titulos[4] = "Seres eletro-parixara no algodoeiro";
+titulos[5] = "Seres eletro-parixara no algodoeiro";
+titulos[6] = "Arquivo algodão";
+titulos[7] = "Arquivo algodão";
+titulos[8] = "Algodão canta ausências";
+titulos[9] = "Algodão canta ausências";
+titulos[10] = "Kinharyd-rezado";
+titulos[11] = "Kinharyd-rezado";
+titulos[12] = "Das ausências, mas sempre estivemos aqui";
+titulos[13] = "Das ausências, mas sempre estivemos aqui";
+titulos[14] = "Tecer o fio-forte";
+titulos[15] = "Tecer o fio-forte";
+titulos[16] = "Antes de eu morrê, já sabe";
+titulos[17] = "Antes de eu morrê, já sabe";
+titulos[18] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
+titulos[19] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
+titulos[20] = "O que é arquivo?";
+titulos[21] = "O que é arquivo?";
+titulos[22] = "Ficha técnica";
+titulos[23] = "Agradecimentos";
+
+
+switch( INDEX ){
+	case 0:
+		SKT = new S00_SAGUAO();
+		break;
+	case 1:
+		SKT = new S00AVISO();
+		break;
+	case 2:
+		SKT = new S01DESCRICAO();
+		break;
+	case 3:
+		build_S01();
+		break;
+	case 4:
+		SKT = new S02DESCRICAO();
+		break;
+	case 5:
+		build_S02();
+		break;
+	case 6:
+		SKT = new S03DESCRICAO();
+		break;
+	case 7:
+		build_S03();
+		break;
+	case 8:
+		SKT = new S04DESCRICAO();
+		break;
+	case 9:
+		build_S04();
+		break;
+	case 10:
+		SKT = new S05DESCRICAO();
+		break;
+	case 11:
+		build_S05();
+		break;
+	case 12:
+		SKT = new S06DESCRICAO();
+		break;
+	case 13:
+		build_S06();
+		break;
+	case 14:
+		SKT = new S07DESCRICAO();
+		break;
+	case 15:
+		build_S07();
+		break;
+	case 16:
+		SKT = new S08DESCRICAO();
+		break;
+	case 17:
+		build_S08();
+		break;
+	case 18:
+		SKT = new S09DESCRICAO();
+		break;
+	case 19:
+		build_S09();
+		break;
+	case 20:
+		SKT = new S10DESCRICAO();
+		break;
+	case 21:
+		build_S10();
+		break;
+	case 22:
+		SKT = new S11_CREDITOS();
+		break;
+	case 23:
+		SKT = new S12_AGRADECIMENTOS();
+		break;
+}
