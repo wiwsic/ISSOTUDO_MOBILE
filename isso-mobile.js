@@ -465,7 +465,7 @@ class S00_SAGUAO {
 	  textFont(DINcon, textFontSize * 0.45);
 	  textLeading(textFontSize * 0.45);
 	  text(
-		"Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de S. Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
+		"Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de São Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no Pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
 		10,
 		textPositionY + textFontSize * 2,
 		textWidth
@@ -527,7 +527,7 @@ class S01DESCRICAO{
 		fill(255);
 		noStroke();
 
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.06;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -926,7 +926,7 @@ class S02DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.06;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -1257,7 +1257,7 @@ class S03DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.06;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -1595,7 +1595,7 @@ class S04DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -1778,7 +1778,7 @@ class S05DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -1786,7 +1786,7 @@ class S05DESCRICAO{
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize * 1.1 );
 		textLeading(textLeadingSize * 1.1);
-		text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", width * 0.5, trimid );
+		text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA?", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -1983,7 +1983,7 @@ class S06DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -2353,7 +2353,7 @@ class S07DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -2683,7 +2683,7 @@ class S08DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -2964,7 +2964,7 @@ class S09DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -2972,7 +2972,7 @@ class S09DESCRICAO{
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize * 1.3);
 		textLeading(textLeadingSize * 1.3);
-		text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", width * 0.5, trimid );
+		text("OUVIR-ARQUIVO\nPLANTAR-ARQUIVO\nESPERAR-ARQUIVO\nCOLHER-ARQUIVO\nFIAR-ARQUIVO\nSOPRAR-ARQUIVO\nTECER-ARQUIVO", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -3189,7 +3189,7 @@ class S10DESCRICAO{
 		clear();
 		fill(255);
 		noStroke();
-		var textFontSize = width * 0.10;
+		var textFontSize = width * 0.07;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -3694,123 +3694,123 @@ class S11_CREDITOS{
 		textFont( DINcon, 15 );
 		textLeading(17);
 
-		text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+		text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 			  0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
-		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+		text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 			  0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 		
 			  if (window.innerWidth <= 362) {
 				console.log('362')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
 			  } else if (window.innerWidth <= 390) {
 				console.log('390')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
 			  } else if (window.innerWidth <= 450){
 				console.log('450')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
 			  } else if (window.innerWidth <= 560 && window.innerHeight <= 760){
 				console.log('560-760')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 				  
 			  } else if (window.innerWidth <= 560){
 				console.log('560')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 				  
 			  } else if (window.innerWidth <= 600){
 				console.log('600')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
 			  } else if (window.innerWidth <= 700){
 				console.log('700')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			  } else if (window.innerWidth <= 800){
 				console.log('800')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			  }   else if (window.innerWidth <= 920 && window.innerHeight >= 1500){
 				console.log('920-1500')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 
 			  } else if (window.innerWidth <= 920){
 				console.log('920')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			} else if (window.innerWidth <= 1000){
 				console.log('1000')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			} else if (window.innerWidth <= 1100){
 				console.log('1100')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			} else if (window.innerWidth <= 1200){
 				console.log('1200')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			} else if (window.innerWidth <= 1300){
 				console.log('1300')
-				text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+				text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 				0 + 0.05 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
   
-		  		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
+				text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 				0 + 0.57 * VIEWPORT.w, 0.15 * VIEWPORT.h, 0.5 * VIEWPORT.w );
 			}
 
 		stroke(255);
 		strokeWeight(1);
-		line( this.introskp.x, this.introskp.b, this.introskp.r, this.introskp.b );
-		line( this.wiw.x, this.wiw.b, this.wiw.r, this.wiw.b );
+		//line( this.introskp.x, this.introskp.b, this.introskp.r, this.introskp.b );
+		//line( this.wiw.x, this.wiw.b, this.wiw.r, this.wiw.b );
 
 
 	}
@@ -3818,13 +3818,13 @@ class S11_CREDITOS{
 	mousePressed(){}
 	mouseDragged(){}
 	mouseReleased(){
-		if (mouseButton === LEFT) {
+/* 		if (mouseButton === LEFT) {
 			if( coordinates_in_rct( mouseX, mouseY, this.introskp ) ){
 				window.open("http://introscopia.github.io/");
 			} else 	if( coordinates_in_rct( mouseX, mouseY, this.wiw ) ){
 				window.open("https://wiwsic.xyz/");
 			}
-		}
+		} */
 	}
 	end(){}
 }
@@ -3983,7 +3983,7 @@ class S12_AGRADECIMENTOS{
 /* 		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
 			  VIEWPORT.x + 0.74 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.20 * VIEWPORT.w ); */
 		
-		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
+		text("AGRADECIMENTOS GUSTAVO CABOCO:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nComissão YVYRUPA\nDora Correa\nThiago Gil de Oliveira Virava\nSimone Lopes de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nFrancisco Bresolin\nRafael Falasco\nCaroline Carrion", 
 			  width * 0.5, height * 0.5);
 		
 	}

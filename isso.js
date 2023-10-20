@@ -334,7 +334,7 @@ class S00_SAGUAO{
 
 		textFont( DINcon, 18 );
 		textLeading(18);
-		text("Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de S. Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
+		text("Se ninguém conseguir manter viva a constelação de relações que um arquivo precisa para respirar, então ele é um arquivo-morto e que, se está nessa condição, o melhor é tratar como qualquer matéria morta e devolvê-la à terra.\n\nÀ terra retorno.\n\nA impermanência como ponto de encontro no Arquivo Histórico da Bienal de São Paulo nos reúne para uma pesquisa sobre ausências. Eu, Gustavo Caboco Wapichana e Tipuici Manoki lançamos a publicação digital e impressa “ISSO TUDO NÃO ME DIZ NADA” no seminário \"Conversas com ausências\" no Pavilhão da Bienal de São Paulo, em 2023.\n\nA obra-digital Ausências ou Sintomas? (2023), é publicada no site da Fundação Bienal e dialoga com esse contexto do Arquivo Histórico Wanda Svevo.\nMas afinal meus parentes, o que é arquivo?",
 			  100, 285, VIEWPORT.w * 0.38 );
 		
 		//text("Se ninguém conseguir manter viva\na constelação de relações\nque um arquivo precisa para respirar,\nentão ele é um ser-arquivo sem vida\ne que, se está nessa condição,\no melhor é tratar\ncomo qualquer matéria-morta\ne devolvê-la à terra.\n\nretorno à terra.\n", 
@@ -1003,7 +1003,7 @@ function S03_draw(){
 	textAlign(LEFT, CENTER);
 	textFont( DINcon, 50 );
 	textLeading(50);
-	text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", 100, trimid );
+	text("E SE\nUM DE NOSSOS\nARQUIVOS-INDÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", 100, trimid );
 
 	SKT.wind = p5.Vector.lerp( SKT.wind, createVector( movedX, movedY ).mult(0.1), 0.1 );
 	SKT.wind.x *= 0.99;
@@ -1228,7 +1228,7 @@ function S05_draw(){
 	textAlign(LEFT, CENTER);
 	textFont( DINcon, 50 );
 	textLeading(50);
-	text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", 100, trimid );
+	text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA?", 100, trimid );
 
 	push();
 	imageMode(CORNER);
@@ -1923,7 +1923,7 @@ function S09_draw(){
 	textAlign(LEFT, CENTER);
 	textFont( DINcon, 50 );
 	textLeading(50);
-	text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", 100, trimid );
+	text("OUVIR-ARQUIVO\nPLANTAR-ARQUIVO\nESPERAR-ARQUIVO\nCOLHER-ARQUIVO\nFIAR-ARQUIVO\nSOPRAR-ARQUIVO\nTECER-ARQUIVO", 100, trimid );
 
 	let tx = 3.5 * cos(SKT.tet);
 	let ty = 3.5 * sin(2 * SKT.tet); 
@@ -2087,12 +2087,19 @@ class S11_CREDITOS{
 		//this.tx = ;
 		//this.ty = this.tx + (14 * ( textAscent() + textDescent() ));
 		//this.tw = textWidth("https://introscopia.github.io/");
-		let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+		let b = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
 		this.introskp = DINcon.textBounds("https://introscopia.github.io/", 0, 0, 15 );
 		this.introskp.x = VIEWPORT.x + (0.44 * VIEWPORT.w);
 		this.introskp.y = VIEWPORT.y + (0.1  * VIEWPORT.h) + b.h;
 		this.introskp.b = this.introskp.y + this.introskp.h;
 		this.introskp.r = this.introskp.x + this.introskp.w;
+
+		let c = DINcon.textBounds("É\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng", 0, 0, 15 );
+		this.wiw = DINcon.textBounds("https://wiwsic.xyz/", 0, 0, 15 );
+		this.wiw.x = VIEWPORT.x + (0.44 * VIEWPORT.w);
+		this.wiw.y = VIEWPORT.y + (0.1  * VIEWPORT.h) + c.h;
+		this.wiw.b = this.wiw.y + this.wiw.h;
+		this.wiw.r = this.wiw.x + this.wiw.w;
 
 		loop();
 	}
@@ -2105,18 +2112,19 @@ class S11_CREDITOS{
 		textFont( DINcon, 15 );
 		textLeading(17);
 
-		text( "FICHA TÉCNICA EDITORIAL\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert", //\n\nCapa e contracapa:\nGustavo Caboco Wapichana
+		text( "FICHA TÉCNICA EDITORIAL\n\nRealização:\nFundação Bienal de São Paulo\n\nCoordenação geral e Realização:\nPICADA (@picada.livros)\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nTextos e depoimentos transcritos:\nGustavo Caboco Wapichana\nTipuici Manoki\n\nOrganização editorial, projeto gráfico e desenhos:\nGustavo Caboco Wapichana\n\nFotografias e artes licenciadas:\nArquivo Histórico Wanda Svevo\nRicardo Werá\nTipuici Manóki\nGustavo Caboco Wapichana\n\nRevisão crítica:\nPaula Berbert\n\nCapa e contracapa:\nGustavo Caboco Wapichana",
 			  VIEWPORT.x + 0.14 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.25 * VIEWPORT.w );
 
-		text("FICHA TÉCNICA OBRA-DIGITAL\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/", 
+		text("Projeto Obra Digital Gustavo Caboco\n\nRealização:\nFundação Bienal de São Paulo\n\nArtista e Direção:\nGustavo Caboco Wapichana\n\nPesquisa no Arquivo Histórico Wanda Svevo:\nGustavo Caboco Wapichana\nTipuici Manóki\n\nDesenho de som:\nIan Wapichana\n\nProgramação Criativa:\nJoão Antonio de F. P. e Ferreira\nhttps://introscopia.github.io/\n\nAdaptação Mobile:\nWiW\nhttps://wiwsic.xyz/", 
 			  VIEWPORT.x + 0.44 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.25 * VIEWPORT.w );
 
 		stroke(255);
 		strokeWeight(1);
 		line( this.introskp.x, this.introskp.b, this.introskp.r, this.introskp.b );
+		line( this.wiw.x, this.wiw.b, this.wiw.r, this.wiw.b );
 
 		noStroke();
-		text("AGRADECIMENTOS:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nPaulo Miyada\nDora Côrrea\nThiago Gil de Oliveira Virava\nSimone de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nArquivo Histórico Wanda Svevo\nFundação Bienal de São Paulo\nComissão YVYRUPA", 
+		text("AGRADECIMENTOS GUSTAVO CABOCO:\n\nAislan Pankararu\nColetivo Ijã Mytyli de Cinema Manoki e Myky\nFamília Wapichana\nAritana Yawalapiti\nNaine Terena\nDenilson Baniwa\nComissão YVYRUPA\nDora Correa\nThiago Gil de Oliveira Virava\nSimone Lopes de Lira\nAna Luiza de Oliveira Mattos\nAmanda Pereira Siqueira\nMelânie Vargas de Araujo\nFrancisco Bresolin\nRafael Falasco\nCaroline Carrion", 
 			  VIEWPORT.x + 0.74 * VIEWPORT.w, 0.1 * VIEWPORT.h, 0.20 * VIEWPORT.w );
 	}
 	mouseMoved(){}
@@ -2126,6 +2134,8 @@ class S11_CREDITOS{
 		if (mouseButton === LEFT) {
 			if( coordinates_in_rct( mouseX, mouseY, this.introskp ) ){
 				window.open("http://introscopia.github.io/");
+			} else 	if( coordinates_in_rct( mouseX, mouseY, this.wiw ) ){
+				window.open("https://wiwsic.xyz/");
 			}
 		}
 	}
