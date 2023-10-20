@@ -148,17 +148,10 @@ class Rig{
 
 	draw(){
 		for( var i = 0; i < this.N; ++i ){
-		/* 	strokeWeight(2);
-			stroke(0,0,255);
-			line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
 
-			noFill();
-
-			    // Desenhar retângulo
-				rect(this.R[i].x, this.R[i].y, this.R[i].w, this.R[i].h);
-    
-				// Desenhar elipse nas coordenadas do vetor
-				ellipse(this.V[i].x, this.V[i].y, 10, 10); */
+			//strokeWeight(2);
+			//stroke(0,0,255);
+			//line( this.V[i].x, this.V[i].y, this.V[i+1].x, this.V[i+1].y );
 
 			push();
 			translate( this.V[i].x, this.V[i].y );
@@ -362,27 +355,8 @@ class S00_SAGUAO{
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S01DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("NOSSA RELAÇÃO\nCOM A TERRA\nÉ DE FATO UMA BASE\nPARA PENSARMOS\nARQUIVO-INDÍGENA", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
 
 function build_S01() {
 	
@@ -652,27 +626,7 @@ function S01_end(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S02DESCRICAO{
 
-	constructor(){
-		loop();
-	}
-
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSAS AUSÊNCIAS\nNÃO FOSSEM SINTOMAS?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
 
 
 function build_S02(){
@@ -879,27 +833,9 @@ function S02_mouseMoved(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S03DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nUM DE NOSSOS\nARQUIVOS-INÍGENAS\nSE INICIAR\nNUMA FLOR DE ALGODÃO?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
+
 
 
 function build_S03(){
@@ -1122,27 +1058,11 @@ function S03_draw(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S04DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nA FLOR\nESTE FIO-ARQUIVO-VIVO\nESTÁ NUM TEMPO HISTÓRICO\nNÃO-LINEAR?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
+
+
+
 
 function build_S04(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
@@ -1256,27 +1176,9 @@ function S04_mouseMoved(){
 //-----------------------------------------------------------------------------------------------------------
 
 
-class S05DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSO FIO-ARQUIVO\nSE ORGANIZA\nNO TEMPO DAS RELAÇÕES\nSEMENTE-FLORESTA", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
+
 
 
 function build_S05(){
@@ -1368,27 +1270,9 @@ function S05_end(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S06DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("E SE\nNOSSAS REDES DE SABERES\nSE UNEM PARA FAZER\nUM FIO-FORTE?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
+
 
 function build_S06(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
@@ -1592,27 +1476,8 @@ function S06_mouseMoved(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S07DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("\"ISSO TUDO\nNÃO ME DIZ\nNADA.\"\nE SE\nTECERMOS NOSSOS\nCAMINHOS?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
 
 
 function build_S07(){
@@ -1803,27 +1668,9 @@ function S07_mouseReleased(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S08DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("UM FIO DE ALGODÃO,\nUM CANTO,\nUMA REDE DE DORMIR,\nUM GRAFISMO\nSÃO DOCUMENTOS\nHISTÓRICOS.\nARQUIVOS-VIVOS.", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
+
 
 function build_S08(){
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
@@ -2016,27 +1863,8 @@ function S08_end(){
 
 //-----------------------------------------------------------------------------------------------------------
 
-class S09DESCRICAO{
 
-	constructor(){
-		loop();
-	}
 
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("ouvir-ARQUIVO\nplantar-ARQUIVO\nesperar-ARQUIVO\nCOLHER-arquivo\nFIAR-arquivo\nSOPRAR-arquivo\nTECER-arquivo", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
 
 
 function build_S09(){
@@ -2133,27 +1961,7 @@ function S09_end(){
 //-----------------------------------------------------------------------------------------------------------
 
 
-class S10DESCRICAO{
 
-	constructor(){
-		loop();
-	}
-
-	draw(){
-		clear();
-		fill(255);
-		noStroke();
-		textAlign(LEFT, CENTER);
-		textFont( DINcon, 50 );
-		textLeading(50);
-		text("AFINAL, MEUS PARENTES,\nO QUE É ARQUIVO?\nOU AINDA:\nO QUE É ARQUIVO-\nINDÍGENA?", 100, trimid );
-	}
-	mouseMoved(){}
-	mousePressed(){}
-	mouseDragged(){}
-	mouseReleased(){}
-	end(){}
-}
 
 
 function build_S10(){
@@ -2344,66 +2152,36 @@ function load_skt(){
 			SKT = new S00_SAGUAO();
 			break;
 		case 1:
-			SKT = new S01DESCRICAO();
-			break;
-		case 2:
 			build_S01();
 			break;
-		case 3:
-			SKT = new S02DESCRICAO();
-			break;
-		case 4:
+		case 2:
 			build_S02();
 			break;
-		case 5:
-			SKT = new S03DESCRICAO();
-			break;
-		case 6:
+		case 3:
 			build_S03();
 			break;
-		case 7:
-			SKT = new S04DESCRICAO();
-			break;
-		case 8:
+		case 4:
 			build_S04();
 			break;
-		case 9:
-			SKT = new S05DESCRICAO();
-			break;
-		case 10:
+		case 5:
 			build_S05();
 			break;
-		case 11:
-			SKT = new S06DESCRICAO();
-			break;
-		case 12:
+		case 6:
 			build_S06();
 			break;
-		case 13:
-			SKT = new S07DESCRICAO();
-			break;
-		case 14:
+		case 7:
 			build_S07();
 			break;
-		case 15:
-			SKT = new S08DESCRICAO();
-			break;
-		case 16:
+		case 8:
 			build_S08();
 			break;
-		case 17:
-			SKT = new S09DESCRICAO();
-			break;
-		case 18:
+		case 9:
 			build_S09();
 			break;
-		case 19:
-			SKT = new S10DESCRICAO();
-			break;
-		case 20:
+		case 10:
 			build_S10();
 			break;
-		case 21:
+		case 11:
 			SKT = new S11_CREDITOS();
 			break;
 	}
@@ -2440,31 +2218,21 @@ function setup() {
 
 	dootsy = height - 0.6*dootsd;
 	dootss = 1.4*dootsd;
-	dootsx = VIEWPORT.x + (0.45*VIEWPORT.w) - 6*dootss;
+	dootsx = VIEWPORT.x + (0.5*VIEWPORT.w) - 6*dootss;
 
-	titulos = Array(22);
+	titulos = Array(12);
 	titulos[0] = "Início"
-	titulos[1] = "Pés de algodão-Descrição";
-	titulos[2] = "Pés de algodão";
-	titulos[3] = "Seres eletro-parixara no algodoeiro-Descrição";
-	titulos[4] = "Seres eletro-parixara no algodoeiro";
-	titulos[5] = "Arquivo algodão-Descrição";
-	titulos[6] = "Arquivo algodão";
-	titulos[7] = "Algodão canta ausências-Descrição";
-	titulos[8] = "Algodão canta ausências";
-	titulos[9] = "Kinharyd-rezado-Descrição";
-	titulos[10] = "Kinharyd-rezado";
-	titulos[11] = "Das ausências, mas sempre estivemos aqui-Descrição";
-	titulos[12] = "Das ausências, mas sempre estivemos aqui";
-	titulos[13] = "Tecer o fio-forte-Descrição";
-	titulos[14] = "Tecer o fio-forte";
-	titulos[15] = "Antes de eu morrê, já sabe-Descrição";
-	titulos[16] = "Antes de eu morrê, já sabe";
-	titulos[17] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo-Descrição";
-	titulos[18] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
-	titulos[19] = "O que é arquivo?-Descrição";
-	titulos[20] = "O que é arquivo?";
-	titulos[21] = "Ficha técnica";
+	titulos[1] = "Pés de algodão";
+	titulos[2] = "Seres eletro-parixara no algodoeiro";
+	titulos[3] = "Arquivo algodão";
+	titulos[4] = "Algodão canta ausências";
+	titulos[5] = "Kinharyd-rezado";
+	titulos[6] = "Das ausências, mas sempre estivemos aqui";
+	titulos[7] = "Tecer o fio-forte";
+	titulos[8] = "Antes de eu morrê, já sabe";
+	titulos[9] = "Anamnese no Arquivo Histórico da Bienal de S. Paulo";
+	titulos[10] = "O que é arquivo?";
+	titulos[11] = "Ficha técnica";
 
 	SKT = { draw: PH_draw, mouseMoved: PH_mouseMoved, mousePressed: PH_mousePressed, 
 			mouseDragged: PH_mouseDragged, mouseReleased: PH_mouseReleased,
@@ -2495,7 +2263,7 @@ function draw() {
 		else noStroke();
 		triangle( VIEWPORT.x, tritop, VIEWPORT.x, tribot, 2, trimid );
 	}
-	if( INDEX < 21 ){
+	if( INDEX < 11 ){
 		fill(255);
 		if( mouseX > VIEWPORT.r ){
 			stroke(255);
@@ -2508,7 +2276,7 @@ function draw() {
 	push();
 	stroke(255);
 	strokeWeight(2);
-	for( var i = 0; i <= 21; i ++ ){
+	for( var i = 0; i <= 11; i ++ ){
 
 		noFill();
 		if( mouseY > VIEWPORT.h &&
@@ -2562,7 +2330,7 @@ function mouseReleased(){
 		if( mouseY > VIEWPORT.h ){
 			let pi = INDEX;
 			INDEX = round( (mouseX - dootsx) / dootss );
-			if( INDEX != pi && INDEX >= 0 && INDEX <= 21 ){
+			if( INDEX != pi && INDEX >= 0 && INDEX <= 11 ){
 				load_skt();
 			}
 		}
@@ -2572,7 +2340,7 @@ function mouseReleased(){
 			}
 			else INDEX += 1;
 
-			INDEX = constrain( INDEX, 0, 21 );
+			INDEX = constrain( INDEX, 0, 11 );
 			load_skt();
 		}
 	}
@@ -2581,11 +2349,11 @@ function mouseReleased(){
 
 function keyReleased(){
 	if (keyCode === LEFT_ARROW) {
-		INDEX = constrain( INDEX - 1, 0, 21 );
+		INDEX = constrain( INDEX - 1, 0, 11 );
 		load_skt();
 	}
 	else if (keyCode === RIGHT_ARROW) {
-		INDEX = constrain( INDEX + 1, 0, 21 );
+		INDEX = constrain( INDEX + 1, 0, 11 );
 		load_skt();
 	}
 	else if( keyCode === 36 ){//home

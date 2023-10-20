@@ -473,7 +473,7 @@ class S00_SAGUAO {
   
 	  textAlign(CENTER, CENTER);
 	  textFont(DINcon, textFontSize * 0.38);
-	  text("Esta obra-digital inclui componentes de áudio e de interatividade com o toque.", width * 0.5, textFontSize * 0.5);
+	  //text("Esta obra-digital inclui componentes de áudio e de interatividade com o toque.", width * 0.5, textFontSize * 0.5);
 	}
   
 	mouseMoved() {}
@@ -499,7 +499,7 @@ class S00AVISO{
 		fill(255);
 		noStroke();
 
-		var textFontSize = width * 0.06;
+		var textFontSize = width * 0.05;
 		var textLeadingSize = textFontSize * 0.91;
 		var textPositionY = height * 0.5 - textFontSize * 2.2;
 		var textWidth = width * 0.869;
@@ -507,7 +507,7 @@ class S00AVISO{
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize * 1.3 );
 		textLeading(textLeadingSize * 1.3);
-		text("Esta obra-digital inclui componentes\nde áudio e de\ninteratividade com o toque.", width * 0.5, trimid );
+		text("Esta obra-digital inclui componentes\nde áudio e de interatividade com o toque.", width * 0.5, trimid );
 	}
 	mouseMoved(){}
 	mousePressed(){}
@@ -3966,6 +3966,11 @@ class S12_AGRADECIMENTOS{
 			var textFontSize = width * 0.04;
 			var textLeadingSize = textFontSize * 1.4;
 		}
+
+		textFontSize = textFontSize * .8
+		textLeadingSize = textLeadingSize * .8;
+
+
 		textAlign(CENTER, CENTER);
 		textFont( DINcon, textFontSize );
 		textLeading(textLeadingSize);
@@ -4231,7 +4236,7 @@ function draw() {
   if (INDEX < 23) {
     renderRightTriangle();
   }
-  if (INDEX == 22){
+  if (INDEX == 23){
 	push();
 	textSize(20);
 	textAlign(CENTER, CENTER);
